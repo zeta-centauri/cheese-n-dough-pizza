@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container } from "../Container";
+import { colors } from "../../styles/colors";
 
 const MainHeader = styled.header``;
 const MainHeaderContianer = styled(Container)`
@@ -58,16 +59,16 @@ const LoginButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffe5d0;
+  background: ${colors.secondary};
   border-radius: 9px;
   padding: 16px 35px;
   font-weight: 700;
   font-size: 16px;
-  color: #f77718;
+  color: ${colors.primary};
   transition: all 0.2s ease;
   &:hover {
-    background-color: #f77718;
-    color: white;
+    background-color: ${colors.primary};
+    color: ${colors.fontWhtie};
   }
   @media (width < 880px) {
     display: none;
