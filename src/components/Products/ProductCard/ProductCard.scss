@@ -1,0 +1,44 @@
+@import "../../../scss/colors.scss";
+.product__card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    width: 90%;
+  }
+  .card__text {
+    height: 168px;
+    h3 {
+      font-size: 20px;
+      color: black;
+    }
+    p {
+      font-size: 16px;
+      line-height: 21px;
+      color: #9f9f9f;
+    }
+  }
+  .card__options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    p {
+      margin: 0;
+      font-size: 18px;
+      color: black;
+    }
+    button {
+      border-radius: 16px;
+      font-family: DodoRoundedBold;
+      font-size: 16px;
+      color: white;
+      &:hover {
+        background-color: #ff7d5f;
+        color: white;
+      }
+    }
+  }
+}
