@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { Container } from "../Container";
 import { colors } from "../../styles/colors";
 
-const MainHeader = styled.header``;
-const MainHeaderContianer = styled(Container)`
+const MainHeaderContainer = styled(Container)`
   display: flex;
   align-items: center;
-  padding: 45px 0px;
+  padding-top: 30px;
+  padding-bottom: 17px;
 `;
 const Logo = styled.a`
   margin-right: auto;
@@ -83,34 +83,32 @@ const Burger = styled.button`
 
 export default function Header() {
   return (
-    <>
-      <MainHeader>
-        <MainHeaderContianer>
-          <Logo href="#">
-            <img src="assets/img/svg/logo.svg" alt="" className="logo" />
-          </Logo>
-          <Nav>
-            <ul>
-              <li>
-                <img src="assets/img/svg/lightning-icon.svg" alt="" />
-                <a href="">Контакты</a>
-              </li>
-              <li>
-                <img src="assets/img/svg/gift-icon.svg" alt="" />
-                <a href="">Акции</a>
-              </li>
-              <li>
-                <img src="assets/img/svg/about-icon.svg" alt="" />
-                <a href="#">О нас</a>
-              </li>
-            </ul>
-          </Nav>
-          <LoginButton>Войти</LoginButton>
-          <Burger>
-            <img src="assets/img/svg/burger.svg" alt="" />
-          </Burger>
-        </MainHeaderContianer>
-      </MainHeader>
-    </>
+    <header>
+      <MainHeaderContainer>
+        <Logo href="#">
+          <img src="assets/img/svg/logo.svg" alt="" className="logo" />
+        </Logo>
+        <Nav>
+          <ul>
+            <li>
+              <img src="assets/img/svg/lightning-icon.svg" alt="" />
+              <a href="">Контакты</a>
+            </li>
+            <li>
+              <img src="assets/img/svg/gift-icon.svg" alt="" />
+              <a href="">Акции</a>
+            </li>
+            <li>
+              <img src="assets/img/svg/about-icon.svg" alt="" />
+              <a href="#">О нас</a>
+            </li>
+          </ul>
+        </Nav>
+        <LoginButton>Войти</LoginButton>
+        <Burger>
+          <img src="assets/img/svg/burger.svg" alt="" />
+        </Burger>
+      </MainHeaderContainer>
+    </header>
   );
 }

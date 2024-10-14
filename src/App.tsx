@@ -1,3 +1,4 @@
+import Categories from "./components/Categories/Categories";
 import Header from "./components/Header/Header";
 import { GlobalStyle } from "./GlobalStyle";
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <>
       <GlobalStyle />
       <Header />
+      <Categories />
     </>
   );
 }
