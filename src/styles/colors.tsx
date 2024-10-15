@@ -3,7 +3,7 @@ export const colors = {
   secondary: "#ffe5d0",
 
   fontBlack: "black",
-  fontWhtie: "white",
+  fontWhite: "white",
   fontGray: "#9F9F9F",
 
   bgLight: "white",

@@ -68,7 +68,7 @@ const LoginButton = styled.button`
   transition: all 0.2s ease;
   &:hover {
     background-color: ${colors.primary};
-    color: ${colors.fontWhtie};
+    color: ${colors.fontWhite};
   }
   @media (width < 880px) {
     display: none;

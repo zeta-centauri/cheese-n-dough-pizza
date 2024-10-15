@@ -12,7 +12,7 @@ export default function Categories() {
       <CategoriesContainer>
         <CategoriesList>
           {categories.map((category, index) => (
-            <Category key={index} active={currentCategory === index}>
+            <Category key={index} $isActive={currentCategory === index}>
               <a href="#" onClick={() => setCurrentCategory(index)}>
                 {category}
               </a>
@@ -39,7 +39,6 @@ const CategoriesContainer = styled(Container)`
   display: flex;
   align-items: center;
 `;
-
 const CategoriesList = styled.ul`
   display: flex;
   align-items: center;
@@ -53,7 +52,7 @@ const CategoriesList = styled.ul`
     gap: 12px;
   }
 `;
-const Category = styled.li<{ active: boolean }>`
+const Category = styled.li<{ $isActive?: boolean }>`
   a {
     position: relative;
     text-decoration: none;
@@ -77,15 +76,14 @@ const Category = styled.li<{ active: boolean }>`
       border-radius: 16px;
       display: block;
       padding: 8px 16px;
-      ${({ active }) => `background-color: ${active ? colors.primary : colors.bgGray};`}
-      ${({ active }) => `color: ${active ? colors.fontWhtie : colors.fontBlack};`}
+      ${({ $isActive }) => `background-color: ${$isActive ? colors.primary : colors.bgGray};`}
+      ${({ $isActive }) => `color: ${$isActive ? colors.fontWhite : colors.fontBlack};`}
       &::after {
         display: none;
       }
     }
   }
 `;
-
 const CartButton = styled.button`
   min-width: 118px;
   padding: 8px 12px;
@@ -96,7 +94,7 @@ const CartButton = styled.button`
   border-radius: 8px;
   margin-left: auto;
   background-color: ${colors.primary};
-  color: ${colors.fontWhtie};
+  color: ${colors.fontWhite};
 
   @media (width < 880px) {
     margin-left: 50px;
