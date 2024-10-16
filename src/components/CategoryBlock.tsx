@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Product } from "./Main/Main";
+import { Product } from "./Main";
 import ProductBlock from "./ProductBlock";
 
 interface CategoryBlockProps {
@@ -25,7 +25,11 @@ export default function CategoryBlock({ title, products }: CategoryBlockProps) {
   );
 }
 
-const StyledCategoryBlock = styled.section``;
+const StyledCategoryBlock = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+`;
 const CategoryTitle = styled.h2`
   font-size: 32px;
   font-weight: 700;

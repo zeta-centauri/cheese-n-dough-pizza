@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Container } from "../Container";
-import { colors } from "../../styles/colors";
+import { Container } from "./Container";
+import { colors } from "../styles/colors";
 import { useState } from "react";
 
 const categories = ["Пиццы", "Закуски", "Завтраки", "Напитки", "Коктейли", "Десерты"];

@@ -58,14 +58,14 @@ const ProductFooter = styled.div`
   align-items: center;
   justify-content: space-between;
   p {
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
   }
 `;
 const SelectButtonDesktop = styled.button`
-  border-radius: 16px;
+  border-radius: 20px;
   min-width: 101px;
-  padding: 7px 20px;
+  padding: 12px 20px;
   background-color: ${colors.secondary};
   color: ${colors.primary};
   font-weight: 700;

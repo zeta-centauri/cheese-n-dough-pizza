@@ -1,7 +1,7 @@
 import CartButton from "./components/CartButton";
-import Categories from "./components/Categories/Categories";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Categories from "./components/Categories";
+import Header from "./components/Header";
+import Main from "./components/Main";
 import { GlobalStyle } from "./GlobalStyle";
 function App() {
   return (

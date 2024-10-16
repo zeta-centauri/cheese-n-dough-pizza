@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Container } from "../Container";
-import CategoryBlock from "../CategoryBlock";
+import { Container } from "./Container";
+import CategoryBlock from "./CategoryBlock";
 
 interface Category {
   categoryId: number;
@@ -43,5 +43,8 @@ export default function Main() {
 }
 
 const MainContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
   padding: 15px 0px;
 `;
