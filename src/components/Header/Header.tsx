@@ -2,6 +2,38 @@ import styled from "styled-components";
 import { Container } from "../Container";
 import { colors } from "../../styles/colors";
 
+export default function Header() {
+  return (
+    <header>
+      <MainHeaderContainer>
+        <Logo href="#">
+          <img src="assets/img/svg/logo.svg" alt="" className="logo" />
+        </Logo>
+        <Nav>
+          <ul>
+            <li>
+              <img src="assets/img/svg/lightning-icon.svg" alt="" />
+              <a href="">Контакты</a>
+            </li>
+            <li>
+              <img src="assets/img/svg/gift-icon.svg" alt="" />
+              <a href="">Акции</a>
+            </li>
+            <li>
+              <img src="assets/img/svg/about-icon.svg" alt="" />
+              <a href="#">О нас</a>
+            </li>
+          </ul>
+        </Nav>
+        <LoginButton>Войти</LoginButton>
+        <Burger>
+          <img src="assets/img/svg/burger.svg" alt="" />
+        </Burger>
+      </MainHeaderContainer>
+    </header>
+  );
+}
+
 const MainHeaderContainer = styled(Container)`
   display: flex;
   align-items: center;
@@ -80,35 +112,3 @@ const Burger = styled.button`
     display: block;
   }
 `;
-
-export default function Header() {
-  return (
-    <header>
-      <MainHeaderContainer>
-        <Logo href="#">
-          <img src="assets/img/svg/logo.svg" alt="" className="logo" />
-        </Logo>
-        <Nav>
-          <ul>
-            <li>
-              <img src="assets/img/svg/lightning-icon.svg" alt="" />
-              <a href="">Контакты</a>
-            </li>
-            <li>
-              <img src="assets/img/svg/gift-icon.svg" alt="" />
-              <a href="">Акции</a>
-            </li>
-            <li>
-              <img src="assets/img/svg/about-icon.svg" alt="" />
-              <a href="#">О нас</a>
-            </li>
-          </ul>
-        </Nav>
-        <LoginButton>Войти</LoginButton>
-        <Burger>
-          <img src="assets/img/svg/burger.svg" alt="" />
-        </Burger>
-      </MainHeaderContainer>
-    </header>
-  );
-}

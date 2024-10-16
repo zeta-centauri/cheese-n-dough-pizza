@@ -1,57 +1,438 @@
 [
   {
-    "id": "1",
-    "name": "Креветки со сладким чили",
-    "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
-    "categories": [
-      "pizza"
-    ],
-    "types": [
+    "categoryId": 1,
+    "title": "pizza",
+    "products": [
       {
-        "size": 25,
-        "price": 549,
-        "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
-        "weight": 390
+        "id": "1",
+        "name": "Креветки со сладким чили",
+        "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 549,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 390
+          },
+          {
+            "size": 30,
+            "price": 849,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 630
+          },
+          {
+            "size": 35,
+            "price": 999,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595D8EFBFD84DD0BAA86BD6B64.avif",
+            "weight": 800
+          }
+        ]
       },
       {
-        "size": 30,
-        "price": 849,
-        "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
-        "weight": 630
+        "id": "2",
+        "name": "Бефстроганов",
+        "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 499,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43C63CD828D9BC3127E7B7AD7.avif",
+            "weight": 410
+          },
+          {
+            "size": 30,
+            "price": 749,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif",
+            "weight": 570
+          },
+          {
+            "size": 35,
+            "price": 879,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E4417B796B852CA22778AB59F7.avif",
+            "weight": 770
+          }
+        ]
       },
       {
-        "size": 35,
-        "price": 999,
-        "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595D8EFBFD84DD0BAA86BD6B64.avif",
-        "weight": 800
+        "id": "3",
+        "name": "Мясная с аджикой",
+        "description": "Баварские колбаски, острый соус аджика, острые колбаски чоризо, цыпленок, пикантная пепперони, моцарелла, фирменный томатный соус",
+        "types": [
+          {
+            "size": 25,
+            "price": 499,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EF438E8FA58DA88AC1B2370F02A4D4.avif",
+            "weight": 420
+          },
+          {
+            "size": 30,
+            "price": 749,
+            "image": "https://media.dodostatic.net/image/r:1280x1280/11EF438E93884BFEBFE79D11095AE2D4.avif",
+            "weight": 610
+          },
+          {
+            "size": 35,
+            "price": 879,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EF438E9DE514FB9742C94B62F9AA66.avif",
+            "weight": 840
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "name": "Сырная",
+        "description": "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 309,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D610CF7E265B7C72BE5AE757CA7.avif",
+            "weight": 310
+          },
+          {
+            "size": 30,
+            "price": 539,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D610D2925109AB2E1C92CC5383C.avif",
+            "weight": 470
+          },
+          {
+            "size": 35,
+            "price": 669,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D610D91679BB519F38C3F45880F.avif",
+            "weight": 640
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "name": "Пепперони фреш",
+        "description": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус",
+        "types": [
+          {
+            "size": 25,
+            "price": 309,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D612F98BC0EA828957CAFF9C8EC.avif",
+            "weight": 380
+          },
+          {
+            "size": 30,
+            "price": 539,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+            "weight": 590
+          },
+          {
+            "size": 35,
+            "price": 669,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D6130241E75B0AB33725248C0D0.avif",
+            "weight": 790
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "name": "Двойной цыпленок",
+        "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 409,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D614C92FBA9A7C5F124C809FE88.avif",
+            "weight": 360
+          },
+          {
+            "size": 30,
+            "price": 619,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D614CBE0530B7234B6D7A6E5F8E.avif",
+            "weight": 520
+          },
+          {
+            "size": 35,
+            "price": 749,
+            "image": "https://media.dodostatic.net/image/r:760x760/11EE7D614D1BB6CB8DED93790D79E466.avif",
+            "weight": 730
+          }
+        ]
       }
     ]
   },
   {
-    "id": "2",
-    "name": "Бефстроганов",
-    "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
-    "categories": [
-      "pizza"
-    ],
-    "types": [
+    "categoryId": 2,
+    "title": "snacks",
+    "products": [
       {
-        "size": 25,
-        "price": 499,
-        "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43C63CD828D9BC3127E7B7AD7.avif",
-        "weight": 410
+        "id": "1",
+        "name": "Креветки со сладким чили",
+        "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 549,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 390
+          },
+          {
+            "size": 30,
+            "price": 849,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 630
+          },
+          {
+            "size": 35,
+            "price": 999,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595D8EFBFD84DD0BAA86BD6B64.avif",
+            "weight": 800
+          }
+        ]
       },
       {
-        "size": 30,
-        "price": 749,
-        "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif",
-        "weight": 570
-      },
-      {
-        "size": 35,
-        "price": 879,
-        "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E4417B796B852CA22778AB59F7.avif",
-        "weight": 770
+        "id": "2",
+        "name": "Бефстроганов",
+        "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 499,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43C63CD828D9BC3127E7B7AD7.avif",
+            "weight": 410
+          },
+          {
+            "size": 30,
+            "price": 749,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif",
+            "weight": 570
+          },
+          {
+            "size": 35,
+            "price": 879,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E4417B796B852CA22778AB59F7.avif",
+            "weight": 770
+          }
+        ]
       }
     ]
-  }]
+  },
+  {
+    "categoryId": 3,
+    "title": "breakfast",
+    "products": [
+      {
+        "id": "1",
+        "name": "Креветки со сладким чили",
+        "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 549,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 390
+          },
+          {
+            "size": 30,
+            "price": 849,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 630
+          },
+          {
+            "size": 35,
+            "price": 999,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595D8EFBFD84DD0BAA86BD6B64.avif",
+            "weight": 800
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Бефстроганов",
+        "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 499,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43C63CD828D9BC3127E7B7AD7.avif",
+            "weight": 410
+          },
+          {
+            "size": 30,
+            "price": 749,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif",
+            "weight": 570
+          },
+          {
+            "size": 35,
+            "price": 879,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E4417B796B852CA22778AB59F7.avif",
+            "weight": 770
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": 4,
+    "title": "drinks",
+    "products": [
+      {
+        "id": "1",
+        "name": "Креветки со сладким чили",
+        "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 549,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 390
+          },
+          {
+            "size": 30,
+            "price": 849,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 630
+          },
+          {
+            "size": 35,
+            "price": 999,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595D8EFBFD84DD0BAA86BD6B64.avif",
+            "weight": 800
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Бефстроганов",
+        "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 499,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43C63CD828D9BC3127E7B7AD7.avif",
+            "weight": 410
+          },
+          {
+            "size": 30,
+            "price": 749,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif",
+            "weight": 570
+          },
+          {
+            "size": 35,
+            "price": 879,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E4417B796B852CA22778AB59F7.avif",
+            "weight": 770
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": 5,
+    "title": "cocktails",
+    "products": [
+      {
+        "id": "1",
+        "name": "Креветки со сладким чили",
+        "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 549,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 390
+          },
+          {
+            "size": 30,
+            "price": 849,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 630
+          },
+          {
+            "size": 35,
+            "price": 999,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595D8EFBFD84DD0BAA86BD6B64.avif",
+            "weight": 800
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Бефстроганов",
+        "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 499,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43C63CD828D9BC3127E7B7AD7.avif",
+            "weight": 410
+          },
+          {
+            "size": 30,
+            "price": 749,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif",
+            "weight": 570
+          },
+          {
+            "size": 35,
+            "price": 879,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E4417B796B852CA22778AB59F7.avif",
+            "weight": 770
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "categoryId": 6,
+    "title": "desserts",
+    "products": [
+      {
+        "id": "1",
+        "name": "Креветки со сладким чили",
+        "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 549,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 390
+          },
+          {
+            "size": 30,
+            "price": 849,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "weight": 630
+          },
+          {
+            "size": 35,
+            "price": 999,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595D8EFBFD84DD0BAA86BD6B64.avif",
+            "weight": 800
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Бефстроганов",
+        "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "types": [
+          {
+            "size": 25,
+            "price": 499,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43C63CD828D9BC3127E7B7AD7.avif",
+            "weight": 410
+          },
+          {
+            "size": 30,
+            "price": 749,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E43DC39C94AA5765DBF1C97100.avif",
+            "weight": 570
+          },
+          {
+            "size": 35,
+            "price": 879,
+            "image": "https://media.dodostatic.net/image/r:584x584/11EEF9E4417B796B852CA22778AB59F7.avif",
+            "weight": 770
+          }
+        ]
+      }
+    ]
+  }
+]

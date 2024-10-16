@@ -1,6 +1,16 @@
 import styled from "styled-components";
 import { colors } from "../styles/colors";
 
+export default function CartButton() {
+  return (
+    <Button>
+      <img src="assets/img/svg/cart.svg" alt="" />
+      <div className="divider"></div>
+      <p className="money">499 ₽</p>
+    </Button>
+  );
+}
+
 const Button = styled.button`
   display: none;
   position: fixed;
@@ -24,12 +34,3 @@ const Button = styled.button`
     display: flex;
   }
 `;
-export default function CartButton() {
-  return (
-    <Button>
-      <img src="assets/img/svg/cart.svg" alt="" />
-      <div className="divider"></div>
-      <p className="money">499 ₽</p>
-    </Button>
-  );
-}
