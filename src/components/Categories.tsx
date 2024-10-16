@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Container } from "./Container";
 import { colors } from "../styles/colors";
 import { useState } from "react";
+import CartButton from "./CartButton";
 
 const categories = ["Пиццы", "Закуски", "Завтраки", "Напитки", "Коктейли", "Десерты"];
 
@@ -19,10 +20,7 @@ export default function Categories() {
             </Category>
           ))}
         </CategoriesList>
-        <CartButton>
-          <img src="assets/img/svg/cart.svg" alt="" />
-          Корзина
-        </CartButton>
+        <CartButton isCategoriesButton={true} />
       </CategoriesContainer>
     </CategoriesWrapper>
   );
@@ -38,6 +36,7 @@ const CategoriesWrapper = styled.header`
 const CategoriesContainer = styled(Container)`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 const CategoriesList = styled.ul`
   display: flex;
@@ -82,24 +81,5 @@ const Category = styled.li<{ $isActive?: boolean }>`
         display: none;
       }
     }
-  }
-`;
-const CartButton = styled.button`
-  min-width: 118px;
-  padding: 8px 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 8px;
-  margin-left: auto;
-  background-color: ${colors.primary};
-  color: ${colors.fontWhite};
-
-  @media (width < 880px) {
-    margin-left: 50px;
-  }
-  @media (width < 650px) {
-    display: none;
   }
 `;

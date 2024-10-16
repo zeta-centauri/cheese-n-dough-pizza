@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { colors } from "../styles/colors";
 
-export default function CartButton() {
+export default function CartButton({ isCategoriesButton }: { isCategoriesButton: boolean }) {
   return (
-    <Button>
+    <Button isCategoriesButton={isCategoriesButton}>
       <img src="assets/img/svg/cart.svg" alt="" />
       <div className="divider"></div>
       <p className="money">499 ₽</p>
@@ -11,9 +11,10 @@ export default function CartButton() {
   );
 }
 
-const Button = styled.button`
-  display: none;
-  position: fixed;
+const Button = styled.button<{ isCategoriesButton: boolean }>`
+  display: ${(props) => (props.isCategoriesButton ? "flex" : "none")};
+  position: ${(props) => (props.isCategoriesButton ? "static" : "fixed")};
+  margin-left: 40px;
   right: 38px;
   bottom: 38px;
   align-items: center;
@@ -30,7 +31,10 @@ const Button = styled.button`
     width: 2px;
     background-color: #e06b14;
   }
+  p {
+    text-wrap: nowrap;
+  }
   @media (width <= 650px) {
-    display: flex;
+    display: ${(props) => (props.isCategoriesButton ? "none" : "flex")};
   }
 `;

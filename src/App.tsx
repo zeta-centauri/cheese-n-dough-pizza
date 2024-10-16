@@ -10,9 +10,7 @@ function App() {
       <Header />
       <Categories />
       <Main />
-      <CartButton />
-
-      <div style={{ height: "200vh" }} className="testblock"></div>
+      <CartButton isCategoriesButton={false} />
     </>
   );
 }
