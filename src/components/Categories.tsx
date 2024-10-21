@@ -59,7 +59,7 @@ const Category = styled.li<{ $isActive?: boolean }>`
     &::after {
       position: absolute;
       content: "";
-      bottom: -5px;
+      bottom: -4px;
       right: 0;
       width: 100%;
       transform: scaleX(0);

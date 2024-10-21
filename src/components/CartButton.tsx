@@ -3,7 +3,7 @@ import { colors } from "../styles/colors";
 
 export default function CartButton({ isCategoriesButton }: { isCategoriesButton: boolean }) {
   return (
-    <Button isCategoriesButton={isCategoriesButton}>
+    <Button $isCategoriesButton={isCategoriesButton}>
       <img src="assets/img/svg/cart.svg" alt="" />
       <div className="divider"></div>
       <p className="money">499 ₽</p>
@@ -11,9 +11,9 @@ export default function CartButton({ isCategoriesButton }: { isCategoriesButton:
   );
 }
 
-const Button = styled.button<{ isCategoriesButton: boolean }>`
-  display: ${(props) => (props.isCategoriesButton ? "flex" : "none")};
-  position: ${(props) => (props.isCategoriesButton ? "static" : "fixed")};
+const Button = styled.button<{ $isCategoriesButton: boolean }>`
+  display: ${(props) => (props.$isCategoriesButton ? "flex" : "none")};
+  position: ${(props) => (props.$isCategoriesButton ? "static" : "fixed")};
   margin-left: 40px;
   right: 38px;
   bottom: 38px;
@@ -26,6 +26,9 @@ const Button = styled.button<{ isCategoriesButton: boolean }>`
   min-width: 121px;
   padding: 12px 20px;
   border-radius: 50px;
+  &:hover {
+    background-color: #e46f15;
+  }
   .divider {
     height: 21px;
     width: 2px;
@@ -35,6 +38,6 @@ const Button = styled.button<{ isCategoriesButton: boolean }>`
     text-wrap: nowrap;
   }
   @media (width <= 650px) {
-    display: ${(props) => (props.isCategoriesButton ? "none" : "flex")};
+    display: ${(props) => (props.$isCategoriesButton ? "none" : "flex")};
   }
 `;
