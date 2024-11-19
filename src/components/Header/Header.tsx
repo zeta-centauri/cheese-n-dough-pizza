@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Container } from "./Container";
-import { colors } from "../styles/colors";
+import { colors } from "../../styles/colors";
+import { Container } from "../Container";
 
 export default function Header() {
   return (

@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { colors } from "../styles/colors";
+import cartStore from "../../stores/cart-store";
+import { colors } from "../../styles/colors";
 
 export default function CartButton({ isCategoriesButton }: { isCategoriesButton: boolean }) {
+  const { open } = cartStore;
   return (
-    <Button $isCategoriesButton={isCategoriesButton}>
+    <Button onClick={open} $isCategoriesButton={isCategoriesButton}>
       <img src="assets/img/svg/cart.svg" alt="" />
       <div className="divider"></div>
       <p className="money">499 ₽</p>

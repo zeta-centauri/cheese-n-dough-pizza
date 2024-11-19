@@ -1,59 +1,92 @@
 import styled from "styled-components";
-import { colors } from "../styles/colors";
+import { colors } from "../../styles/colors";
+import { Product } from "../../types";
+import productStore from "../../stores/product-store";
 
-interface ProductBlockProps {
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-}
-export default function ProductBlock({ name, description, price, image }: ProductBlockProps) {
+export default function ProductBlock({ ...product }: Product) {
+  const { open, setProduct } = productStore;
+
+  const handleSelectButton = () => {
+    setProduct(product);
+    open();
+  };
+
   return (
-    <StyledProductBlock>
-      <ProductImage src={image} alt="" />
-      <ProductText>
-        <h3>{name}</h3>
-        <p>{description}</p>
-        <SelectButtonMobile>от {price} ₽</SelectButtonMobile>
-      </ProductText>
+    <Wrapper>
+      <ProductInfo>
+        <ProductImage
+          onClick={handleSelectButton}
+          src={product.types[0].image}
+          alt=""
+        />
+        <ProductText>
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+          <SelectButtonMobile onClick={handleSelectButton}>
+            от {product.types[0].price} ₽
+          </SelectButtonMobile>
+        </ProductText>
+      </ProductInfo>
+
       <ProductFooter>
-        <p>от {price} ₽</p>
-        <SelectButtonDesktop>Выбрать</SelectButtonDesktop>
+        <p>от {product.types[0].price} ₽</p>
+        <SelectButtonDesktop onClick={handleSelectButton}>
+          Выбрать
+        </SelectButtonDesktop>
       </ProductFooter>
-    </StyledProductBlock>
+    </Wrapper>
   );
 }
 
-// 576px
-
-const StyledProductBlock = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   max-width: 300px;
   display: flex;
+  gap: 20px;
   flex-direction: column;
   align-items: center;
   justify-self: center;
+  justify-content: space-between;
   @media (width <= 576px) {
+    width: 100%;
     max-width: 100%;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 8px;
     padding: 8px 0;
     border-bottom: 0.5px ${colors.bgGray} solid;
   }
 `;
+
+const ProductInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  @media (width <= 576px) {
+    flex-direction: row;
+  }
+`;
 const ProductImage = styled.img`
   width: 90%;
   height: auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 0;
   @media (width <= 576px) {
     width: 158px;
     height: auto;
   }
+  &:hover {
+    transform: translateY(3px);
+  }
 `;
 const ProductText = styled.div`
+  width: 100%;
   padding: 5px 0px;
-  height: 168px;
   display: flex;
   flex-direction: column;
   gap: 5px;

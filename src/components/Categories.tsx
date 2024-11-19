@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Container } from "./Container";
-import { colors } from "../styles/colors";
 import { useState } from "react";
-import CartButton from "./CartButton";
+import { colors } from "../styles/colors";
+import CartButton from "./Buttons/CartButton";
+import { Container } from "./Container";
 
-const categories = ["Пиццы", "Закуски", "Завтраки", "Напитки", "Коктейли", "Десерты"];
+const categories = ["Пиццы", "Закуски", "Завтраки", "Напитки", "Десерты"];
 
 export default function Categories() {
   const [currentCategory, setCurrentCategory] = useState(0);
@@ -29,6 +29,7 @@ export default function Categories() {
 const CategoriesWrapper = styled.header`
   padding: 15px 0px;
   position: sticky;
+  z-index: 1;
   top: 0;
   backdrop-filter: blur(7.400000095367432px);
   background: rgba(255, 255, 255, 0.71);
@@ -75,8 +76,10 @@ const Category = styled.li<{ $isActive?: boolean }>`
       border-radius: 16px;
       display: block;
       padding: 8px 16px;
-      ${({ $isActive }) => `background-color: ${$isActive ? colors.primary : colors.bgGray};`}
-      ${({ $isActive }) => `color: ${$isActive ? colors.fontWhite : colors.fontBlack};`}
+      ${({ $isActive }) =>
+        `background-color: ${$isActive ? colors.primary : colors.bgGray};`}
+      ${({ $isActive }) =>
+        `color: ${$isActive ? colors.fontWhite : colors.fontBlack};`}
       &::after {
         display: none;
       }

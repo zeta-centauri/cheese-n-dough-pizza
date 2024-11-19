@@ -1,13 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 import { reset } from "./styles/reset";
-import { fonts } from "./styles/fonts";
+import "./styles/fonts.css";
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  ${fonts}
   *{
-    font-family: DodoRounded;
+    font-family: "DodoRounded";
+  }
+  body{
+    position: relative;
   }
   
 `;
-
