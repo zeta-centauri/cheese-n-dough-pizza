@@ -1,29 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
-import { observer } from "mobx-react-lite";
-import cartStore from "../../stores/cart-store";
-import { useEffect } from "react";
-import { normalizeScroll } from "../../utils/utils";
 
-const CartAside = observer(() => {
-  const { isOpen, close } = cartStore;
-
-  useEffect(() => {
-    normalizeScroll(isOpen);
-  }, [isOpen]);
-
-  if (!isOpen) return null;
-  return (
-    <CartOveraly onClick={close}>
-      <CartDialog onClick={(e) => e.stopPropagation()}>
-        <CartTitle>Корзина</CartTitle>
-        <CloseButton onClick={close} />
-      </CartDialog>
-    </CartOveraly>
-  );
-});
-
-const CartOveraly = styled.div`
+export const CartOveraly = styled.div`
   height: 100vh;
   width: 100vw;
 
@@ -49,7 +27,7 @@ const CartOveraly = styled.div`
   }
 `;
 
-const CartDialog = styled.aside`
+export const CartDialog = styled.aside`
   height: 100%;
   width: 40%;
   background-color: ${colors.bgLight};
@@ -66,9 +44,9 @@ const CartDialog = styled.aside`
   }
 `;
 
-const CartTitle = styled.h2``;
+export const CartTitle = styled.h2``;
 
-const CloseButton = styled.button`
+export const CloseButton = styled.button`
   position: absolute;
   top: 50%;
   bottom: 50%;
@@ -78,4 +56,3 @@ const CloseButton = styled.button`
   width: 29px;
   height: 29px;
 `;
-export default CartAside;

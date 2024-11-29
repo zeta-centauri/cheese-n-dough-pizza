@@ -1,44 +1,7 @@
 import styled from "styled-components";
-import { colors } from "../../styles/colors";
-import { Product } from "../../types";
-import productStore from "../../stores/product-store";
+import { colors } from "../../../styles/colors";
 
-export default function ProductBlock({ ...product }: Product) {
-  const { open, setProduct } = productStore;
-
-  const handleSelectButton = () => {
-    setProduct(product);
-    open();
-  };
-
-  return (
-    <Wrapper>
-      <ProductInfo>
-        <ProductImage
-          onClick={handleSelectButton}
-          src={product.types[0].image}
-          alt=""
-        />
-        <ProductText>
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          <SelectButtonMobile onClick={handleSelectButton}>
-            от {product.types[0].price} ₽
-          </SelectButtonMobile>
-        </ProductText>
-      </ProductInfo>
-
-      <ProductFooter>
-        <p>от {product.types[0].price} ₽</p>
-        <SelectButtonDesktop onClick={handleSelectButton}>
-          Выбрать
-        </SelectButtonDesktop>
-      </ProductFooter>
-    </Wrapper>
-  );
-}
-
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   max-width: 300px;
   display: flex;
@@ -59,7 +22,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ProductInfo = styled.div`
+export const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,7 +33,7 @@ const ProductInfo = styled.div`
     flex-direction: row;
   }
 `;
-const ProductImage = styled.img`
+export const ProductImage = styled.img`
   width: 90%;
   height: auto;
   transition: all 0.3s ease;
@@ -84,7 +47,7 @@ const ProductImage = styled.img`
     transform: translateY(3px);
   }
 `;
-const ProductText = styled.div`
+export const ProductText = styled.div`
   width: 100%;
   padding: 5px 0px;
   display: flex;
@@ -114,7 +77,7 @@ const ProductText = styled.div`
     }
   }
 `;
-const ProductFooter = styled.div`
+export const ProductFooter = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
@@ -127,7 +90,7 @@ const ProductFooter = styled.div`
     display: none;
   }
 `;
-const SelectButtonDesktop = styled.button`
+export const SelectButtonDesktop = styled.button`
   border-radius: 20px;
   min-width: 101px;
   padding: 12px 20px;
@@ -142,7 +105,7 @@ const SelectButtonDesktop = styled.button`
     color: ${colors.fontWhite};
   }
 `;
-const SelectButtonMobile = styled(SelectButtonDesktop)`
+export const SelectButtonMobile = styled(SelectButtonDesktop)`
   display: none;
   @media (width <= 576px) {
     display: block;

@@ -1,3 +1,5 @@
+import productStore from "../stores/product-store";
+
 export const normalizeScroll = (isOpen: boolean) => {
   const scrollBarWidth =
     window.innerWidth - document.documentElement.clientWidth;
@@ -19,4 +21,8 @@ export const fetchData = async () => {
     "https://67028b4ebd7c8c1ccd3f2a78.mockapi.io/categories"
   );
   return response.json();
+};
+
+export const createCartProduct = () => {
+  
 };

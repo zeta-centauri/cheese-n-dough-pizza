@@ -1,9 +1,7 @@
-import styled from "styled-components";
-import { Container } from "../Container";
-import { colors } from "../../styles/colors";
-
+import { Container } from "../../styles/Container";
 import FooterMain from "./FooterMain/FooterMain";
 import FooterInfo from "./FooterInfo/FooterInfo";
+import { StyledFooter } from "./Footer.styled";
 
 const Footer = () => {
   return (
@@ -15,9 +13,5 @@ const Footer = () => {
     </StyledFooter>
   );
 };
-
-const StyledFooter = styled.footer`
-  background-color: ${colors.bgDark};
-`;
 
 export default Footer;

@@ -1,32 +1,8 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { colors } from "../styles/colors";
-import CartButton from "./Buttons/CartButton";
-import { Container } from "./Container";
+import { colors } from "../../styles/colors";
+import { Container } from "../../styles/Container";
 
-const categories = ["Пиццы", "Закуски", "Завтраки", "Напитки", "Десерты"];
-
-export default function Categories() {
-  const [currentCategory, setCurrentCategory] = useState(0);
-  return (
-    <CategoriesWrapper>
-      <CategoriesContainer>
-        <CategoriesList>
-          {categories.map((category, index) => (
-            <Category key={index} $isActive={currentCategory === index}>
-              <a href="#" onClick={() => setCurrentCategory(index)}>
-                {category}
-              </a>
-            </Category>
-          ))}
-        </CategoriesList>
-        <CartButton isCategoriesButton={true} />
-      </CategoriesContainer>
-    </CategoriesWrapper>
-  );
-}
-
-const CategoriesWrapper = styled.header`
+export const CategoriesWrapper = styled.header`
   padding: 15px 0px;
   position: sticky;
   z-index: 1;
@@ -34,12 +10,12 @@ const CategoriesWrapper = styled.header`
   backdrop-filter: blur(7.400000095367432px);
   background: rgba(255, 255, 255, 0.71);
 `;
-const CategoriesContainer = styled(Container)`
+export const CategoriesContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
-const CategoriesList = styled.ul`
+export const CategoriesList = styled.ul`
   display: flex;
   align-items: center;
   gap: 18px;
@@ -52,7 +28,7 @@ const CategoriesList = styled.ul`
     gap: 12px;
   }
 `;
-const Category = styled.li<{ $isActive?: boolean }>`
+export const Category = styled.li<{ $isActive?: boolean }>`
   a {
     position: relative;
     text-decoration: none;

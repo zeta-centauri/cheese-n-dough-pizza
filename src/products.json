@@ -7,6 +7,38 @@
         "id": "1",
         "name": "Креветки со сладким чили",
         "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
+        "availableIngridients": [
+          {
+            "name": "Сырный бортик",
+            "price": "179",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png"
+          },
+          {
+            "name": "Моцарелла",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png"
+          },
+          {
+            "name": "Сыры чеддер и пармезан",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796"
+          },
+          {
+            "name": "Острый перец халапеньо",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Нежный цыпленок",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Шампиньоны",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324"
+          }
+        ],
         "types": [
           {
             "size": 25,
@@ -17,7 +49,7 @@
           {
             "size": 30,
             "price": 849,
-            "image": "https://media.dodostatic.net/image/r:584x584/11EEFB595863BC67B78F9A9FC7863D9A.avif",
+            "image": "https://media.dodostatic.net/image/r:1280x1280/11EEFB595A197C24BA932A0AD1144AFB.avif",
             "weight": 630
           },
           {

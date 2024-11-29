@@ -1,11 +1,11 @@
-import CartButton from "./components/Buttons/CartButton";
-import CartAside from "./components/Cart/CartPopup";
+import CartButton from "./components/Buttons/CartButton/CartButton";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
-import { GlobalStyle } from "./GlobalStyle";
 import ProductPopup from "./components/ProductPopup/ProductPopup";
-import Categories from "./components/Categories";
+import Categories from "./components/Nav/Categories";
+import CartAside from "./components/Cart/Cart";
+import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
   return (

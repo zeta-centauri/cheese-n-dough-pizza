@@ -12,8 +12,8 @@ class CartStore {
 
   addProduct = (currentProduct: CartProduct) => {
     const hash = this.getProductHash(
-      currentProduct.product.id,
-      currentProduct.product.name,
+      currentProduct.id,
+      currentProduct.name,
       currentProduct.currentIngridients,
       currentProduct.currentSize
     );

@@ -10,24 +10,20 @@ export interface Product {
   description: string;
   isDrink?: boolean;
   types: ProductType[];
-  ingridients?: Ingridient[];
+  availableIngridients?: AvailableIngridient[];
 }
-
 export interface ProductType {
   size: PizzaSize;
   price: number;
   image: string;
   weight: number;
 }
-
 export type Id = string;
-
 export type PizzaSize = number;
 
-export type CartProductKey = string;
 
-export interface CartProduct {
-  product: Product;
+export type CartProductKey = string;
+export interface CartProduct extends Product {
   currentSize?: PizzaSize;
   currentIngridients?: Ingridient[];
   quantity: number;
@@ -35,3 +31,8 @@ export interface CartProduct {
 }
 
 export type Ingridient = string;
+export type AvailableIngridient = {
+  name: string;
+  price: number;
+  imgUrl: string;
+};

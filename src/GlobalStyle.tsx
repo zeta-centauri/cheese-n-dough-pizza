@@ -4,11 +4,13 @@ import "./styles/fonts.css";
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
+  html {
+    scroll-behavior: smooth;
+  }
   *{
     font-family: "DodoRounded";
   }
   body{
     position: relative;
   }
-  
 `;

@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import { Container } from "../Container";
+import { Container } from "../../styles/Container";
 import { Category } from "../../types";
 import { observer } from "mobx-react-lite";
 import productsStore from "../../stores/products-store";
-import LoadingMain from "./LoadingMain";
-import CategoryBlock from "./CategoryBlock";
+import LoadingMain from "./Loading/Loading";
+import CategoryBlock from "./CategoryBlock/CategoryBlock";
 
 const Main = observer(() => {
   const { products, fetchProducts, isLoading } = productsStore;
