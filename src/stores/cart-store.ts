@@ -1,4 +1,4 @@
-import { CartProduct, Id, Ingridient, PizzaSize, Product } from "../types";
+import { CartProduct, Id, Ingridient, PizzaSize } from "../types";
 import { makeAutoObservable } from "mobx";
 
 class CartStore {
@@ -6,37 +6,53 @@ class CartStore {
   totalPrice: number = 0;
   isOpen = false;
 
+  get totalCount() {
+    return Object.values(this.products).reduce(
+      (acc, item) => acc + item.quantity,
+      0
+    );
+  }
+
   constructor() {
     makeAutoObservable(this);
   }
 
-  addProduct = (currentProduct: CartProduct) => {
+  get productsList() {
+    return Object.entries(this.products);
+  }
+
+  addProduct = (product: CartProduct) => {
     const hash = this.getProductHash(
-      currentProduct.id,
-      currentProduct.name,
-      currentProduct.currentIngridients,
-      currentProduct.currentSize
+      product.id,
+      product.name,
+      product.currentIngridients,
+      product.currentSize
     );
 
     if (this.products[hash]) {
       this.products[hash].quantity += 1;
     } else {
-      this.products[hash] = currentProduct;
+      this.products[hash] = product;
     }
     this.totalPrice += this.products[hash].currentPrice;
   };
 
-  removeProduct = (product: Product) => {
+  removeProduct = (product: CartProduct) => {
     const hash = this.getProductHash(
       product.id,
       product.name,
-      product.ingridients,
-      product.types[product.types.length - 1].size
+      product.currentIngridients,
+      product.currentSize
     );
 
     if (this.products[hash]) {
       this.totalPrice -= this.products[hash].currentPrice;
-      delete this.products[hash];
+
+      if (this.products[hash].quantity > 1) {
+        this.products[hash].quantity -= 1;
+      } else {
+        delete this.products[hash];
+      }
     }
   };
 

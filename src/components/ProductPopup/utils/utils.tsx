@@ -1,4 +1,5 @@
 import productStore from "../../../stores/product-store";
+import { CartProduct, PizzaSize, Product } from "../../../types";
 
 export const getProductImage = (): string => {
   const { currentSize, currentProduct } = productStore;
@@ -7,21 +8,21 @@ export const getProductImage = (): string => {
   );
 };
 
-export const getPizzaParams = (): string => {
-  let { currentSize } = productStore;
-  const { currentProduct } = productStore;
-
-  if (!currentProduct!.types[currentSize]) currentSize = 0;
-
+export const getPizzaParams = (
+  product: CartProduct | Product,
+  currentSize: PizzaSize = 0
+): string => {
+  // if (!product!.types[currentSize]) currentSize = 0;
   const result = [];
+  if ((product as CartProduct).currentSize) {
+    currentSize = (product as CartProduct).currentSize!;
+  }
 
-  if (currentProduct!.types[currentSize].size)
-    result.push(currentProduct!.types[currentSize].size + " см");
-  if (currentProduct!.types[currentSize].weight)
+  if (product!.types[currentSize].size)
+    result.push(product!.types[currentSize].size + " см");
+  if (product!.types[currentSize].weight)
     result.push(
-      currentProduct!.types[currentSize].weight +
-        `${currentProduct?.isDrink ? " л" : " г"}`
+      product!.types[currentSize].weight + `${product?.isDrink ? " л" : " г"}`
     );
   return result.join(", ");
 };
-

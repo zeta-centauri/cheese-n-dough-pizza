@@ -118,3 +118,16 @@ export const SelectButtonMobile = styled(SelectButtonDesktop)`
   }
   /* TODO: mobile */
 `;
+
+export const Stars = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 8px;
+`;
+
+export const Star = styled.img`
+  width: 14px;
+  height: 15px;
+`;

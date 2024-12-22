@@ -3,6 +3,8 @@ import { colors } from "../../../../../styles/colors";
 
 export const Wrapper = styled.div<{ $isPicked: boolean }>`
   width: 100%;
+  max-width: 95px;
+  min-width: 95px;
   height: 142px;
   padding: 10px 5px;
 

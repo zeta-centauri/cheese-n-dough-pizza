@@ -6,9 +6,14 @@ import { observer } from "mobx-react-lite";
 import productsStore from "../../stores/products-store";
 import LoadingMain from "./Loading/Loading";
 import CategoryBlock from "./CategoryBlock/CategoryBlock";
+import sortStore from "../../stores/sort-store";
+import searchStore from "../../stores/search-store";
 
 const Main = observer(() => {
-  const { products, fetchProducts, isLoading } = productsStore;
+  const { getProducts, fetchProducts, isLoading, searchProducts } =
+    productsStore;
+  const currentSortValue = sortStore.currentValue;
+  const currentSearchValue = searchStore.currentValue;
 
   useEffect(() => {
     fetchProducts();
@@ -19,9 +24,17 @@ const Main = observer(() => {
   return (
     <main>
       <MainContainer>
-        {products.map((category: Category) => (
-          <CategoryBlock key={category.categoryId} {...category} />
-        ))}
+        {!currentSearchValue.trim() &&
+          getProducts(currentSortValue).map((category: Category) => (
+            <CategoryBlock key={category.categoryId} {...category} />
+          ))}
+
+        {currentSearchValue.trim() && (
+          <CategoryBlock
+            key={0}
+            {...searchProducts(currentSearchValue, currentSortValue)}
+          />
+        )}
       </MainContainer>
     </main>
   );

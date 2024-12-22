@@ -3,7 +3,11 @@ import { normalizeScroll } from "../../utils/utils";
 import { observer } from "mobx-react-lite";
 
 import cartStore from "../../stores/cart-store";
-import { CartOveraly, CartDialog, CartTitle, CloseButton } from "./Cart.styled";
+import { CartOveraly, CartDialog, CartCloseButton } from "./Cart.styled";
+import CartTitle from "./CartTitle/CartTitle";
+import BuyBlock from "./BuyBlock/BuyBlock";
+import ProductsList from "./ProductsList/ProductsList";
+import CartHeader from "./CartHeader/CartHeader";
 
 const CartAside = observer(() => {
   const { isOpen, close } = cartStore;
@@ -16,8 +20,12 @@ const CartAside = observer(() => {
   return (
     <CartOveraly onClick={close}>
       <CartDialog onClick={(e) => e.stopPropagation()}>
-        <CartTitle>Корзина</CartTitle>
-        <CloseButton onClick={close} />
+        <CartHeader />
+        <CartTitle />
+        <ProductsList />
+        <BuyBlock />
+
+        <CartCloseButton onClick={close} />
       </CartDialog>
     </CartOveraly>
   );

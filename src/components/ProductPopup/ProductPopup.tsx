@@ -3,7 +3,11 @@ import { observer } from "mobx-react-lite";
 
 import { normalizeScroll } from "../../utils/utils";
 
-import { ProductOverlay, ProductWrapper } from "./ProductPopup.styled";
+import {
+  ProductCloseButton,
+  ProductOverlay,
+  ProductWrapper,
+} from "./ProductPopup.styled";
 import ProductOptions from "./ProductOptions/ProductOptions";
 import productStore from "../../stores/product-store";
 import ProductInfo from "./ProductInfo/ProductInfo";
@@ -19,6 +23,7 @@ const ProductPopup = observer(() => {
   return (
     <ProductOverlay onClick={close}>
       <ProductWrapper onClick={(e) => e.stopPropagation()}>
+        <ProductCloseButton onClick={close} />
         <ProductInfo />
         <ProductOptions />
       </ProductWrapper>

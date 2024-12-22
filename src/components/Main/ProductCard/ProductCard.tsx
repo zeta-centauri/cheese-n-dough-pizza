@@ -9,14 +9,22 @@ import {
   ProductFooter,
   SelectButtonDesktop,
 } from "./ProductCard.styled";
+import cartStore from "../../../stores/cart-store";
+import { getButtonText } from "./utils";
+import Rating from "./Rating/Rating";
 
 export default function ProductBlock({ ...product }: Product) {
-  const { open, setProduct } = productStore;
+  const { open, setProduct, packProduct } = productStore;
+  const { addProduct } = cartStore;
 
   const handleSelectButton = () => {
     setProduct(product);
-    open();
-  };
+    if (product.types.length > 1) {
+      open();
+    } else {
+      addProduct(packProduct());
+    }
+  }; 
 
   return (
     <Wrapper>
@@ -28,17 +36,18 @@ export default function ProductBlock({ ...product }: Product) {
         />
         <ProductText>
           <h3>{product.name}</h3>
+          <Rating rating={product.rating} />
           <p>{product.description}</p>
           <SelectButtonMobile onClick={handleSelectButton}>
-            от {product.types[0].price} ₽
+            {getButtonText(product.types, true)}
           </SelectButtonMobile>
         </ProductText>
       </ProductInfo>
-
       <ProductFooter>
+
         <p>от {product.types[0].price} ₽</p>
         <SelectButtonDesktop onClick={handleSelectButton}>
-          Выбрать
+          {getButtonText(product.types)}
         </SelectButtonDesktop>
       </ProductFooter>
     </Wrapper>

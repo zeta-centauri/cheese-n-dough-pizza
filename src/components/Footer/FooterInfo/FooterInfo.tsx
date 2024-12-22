@@ -6,7 +6,9 @@ const FooterInfo = () => {
     <Wrapper>
       <Links>
         {linksData.map((link) => (
-          <Link href={link.href}>{link.text}</Link>
+          <Link key={link.text} href={link.href}>
+            {link.text}
+          </Link>
         ))}
       </Links>
       <Description>

@@ -4,7 +4,7 @@
     "title": "Пиццы",
     "products": [
       {
-        "id": "1",
+        "id": "0",
         "name": "Креветки со сладким чили",
         "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
         "availableIngridients": [
@@ -39,6 +39,7 @@
             "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324"
           }
         ],
+        "rating": 4.4,
         "types": [
           {
             "size": 25,
@@ -61,9 +62,42 @@
         ]
       },
       {
-        "id": "2",
+        "id": "1",
         "name": "Бефстроганов",
         "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "availableIngridients": [
+          {
+            "name": "Сырный бортик",
+            "price": "179",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png"
+          },
+          {
+            "name": "Моцарелла",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png"
+          },
+          {
+            "name": "Сыры чеддер и пармезан",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796"
+          },
+          {
+            "name": "Острый перец халапеньо",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Нежный цыпленок",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Шампиньоны",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324"
+          }
+        ],
+        "rating": 3.9,
         "types": [
           {
             "size": 25,
@@ -86,9 +120,42 @@
         ]
       },
       {
-        "id": "3",
+        "id": "2",
         "name": "Мясная с аджикой",
         "description": "Баварские колбаски, острый соус аджика, острые колбаски чоризо, цыпленок, пикантная пепперони, моцарелла, фирменный томатный соус",
+        "availableIngridients": [
+          {
+            "name": "Сырный бортик",
+            "price": "179",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png"
+          },
+          {
+            "name": "Моцарелла",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png"
+          },
+          {
+            "name": "Сыры чеддер и пармезан",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796"
+          },
+          {
+            "name": "Острый перец халапеньо",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Нежный цыпленок",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Шампиньоны",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324"
+          }
+        ],
+        "rating": 3.4,
         "types": [
           {
             "size": 25,
@@ -111,9 +178,42 @@
         ]
       },
       {
-        "id": "4",
+        "id": "3",
         "name": "Сырная",
         "description": "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо",
+        "availableIngridients": [
+          {
+            "name": "Сырный бортик",
+            "price": "179",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png"
+          },
+          {
+            "name": "Моцарелла",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png"
+          },
+          {
+            "name": "Сыры чеддер и пармезан",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796"
+          },
+          {
+            "name": "Острый перец халапеньо",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Нежный цыпленок",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Шампиньоны",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324"
+          }
+        ],
+        "rating": 4.5,
         "types": [
           {
             "size": 25,
@@ -136,9 +236,42 @@
         ]
       },
       {
-        "id": "5",
+        "id": "4",
         "name": "Пепперони фреш",
         "description": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус",
+        "availableIngridients": [
+          {
+            "name": "Сырный бортик",
+            "price": "179",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png"
+          },
+          {
+            "name": "Моцарелла",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png"
+          },
+          {
+            "name": "Сыры чеддер и пармезан",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796"
+          },
+          {
+            "name": "Острый перец халапеньо",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Нежный цыпленок",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Шампиньоны",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324"
+          }
+        ],
+        "rating": 4.7,
         "types": [
           {
             "size": 25,
@@ -161,9 +294,43 @@
         ]
       },
       {
-        "id": "6",
+        "id": "5",
         "name": "Двойной цыпленок",
         "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
+        "availableIngridients": [
+          {
+            "name": "Сырный бортик",
+            "price": "179",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png"
+          },
+          {
+            "name": "Моцарелла",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png"
+          },
+          {
+            "name": "Сыры чеддер и пармезан",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796"
+          },
+          {
+            "name": "Острый перец халапеньо",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Нежный цыпленок",
+            "price": "79",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png"
+          },
+          {
+            "name": "Шампиньоны",
+            "price": "59",
+            "imgUrl": "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324"
+          }
+        ],
+        "rating": 5,
+
         "types": [
           {
             "size": 25,
@@ -192,9 +359,10 @@
     "title": "Закуски",
     "products": [
       {
-        "id": "1",
+        "id": "6",
         "name": "Роллер с ветчиной",
         "description": "Горячий завтрак с ветчиной, томатами, моцареллой, соусом ранч в тонкой пшеничной лепешке",
+        "rating": 4.7,
         "types": [
           {
             "price": 189,
@@ -204,9 +372,11 @@
         ]
       },
       {
-        "id": "2",
+        "id": "7",
         "name": "Супермясной Роллер",
         "description": "Горячая закуска с цыпленком, моцареллой, митболами, острыми колбасками чоризо и соусом бургер в тонкой пшеничной лепешке",
+        "rating": 5,
+
         "types": [
           {
             "price": 259,
@@ -216,9 +386,10 @@
         ]
       },
       {
-        "id": "3",
+        "id": "8",
         "name": "Роллер",
         "description": "Легендарная горячая закуска с цыпленком, томатами, моцареллой, соусом ранч в тонкой пшеничной лепешке",
+        "rating": 5,
         "types": [
           {
             "price": 219,
@@ -228,9 +399,10 @@
         ]
       },
       {
-        "id": "4",
+        "id": "9",
         "name": "Острый Роллер",
         "description": "Горячая закуска с цыпленком, перчиком халапеньо, маринованными огурчиками, томатами, моцареллой и соусом барбекю в тонкой пшеничной лепешке",
+        "rating": 5,
         "types": [
           {
             "price": 239,
@@ -246,9 +418,11 @@
     "title": "Завтраки",
     "products": [
       {
-        "id": "1",
+        "id": "10",
         "name": "Омлет с томатами",
         "description": "Легкий и питательный завтрак: омлет из печи с томатами и моцареллой",
+        "rating": 3.9,
+
         "types": [
           {
             "price": 135,
@@ -258,8 +432,10 @@
         ]
       },
       {
-        "id": "2",
+        "id": "11",
         "name": "Омлет с беконом",
+        "rating": 4.5,
+
         "description": "Классическое сочетание горячего омлета с поджаристой корочкой и бекона с добавлением моцареллы и томатов на завтрак",
         "types": [
           {
@@ -276,7 +452,7 @@
     "title": "Напитки",
     "products": [
       {
-        "id": "1",
+        "id": "12",
         "name": "Добрый Кола",
         "isDrink": true,
         "types": [
@@ -288,7 +464,7 @@
         ]
       },
       {
-        "id": "2",
+        "id": "13",
         "name": "Добрый Лимон-Лайм",
         "isDrink": true,
         "types": [
@@ -306,9 +482,10 @@
     "title": "Десерты",
     "products": [
       {
-        "id": "1",
+        "id": "14",
         "name": "Макарон манго-маракуйя",
         "description": "Bon appétit! Знаменитый французский десерт со вкусом тропических фруктов",
+        "rating": 4.7,
         "types": [
           {
             "price": 119,

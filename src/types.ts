@@ -11,6 +11,7 @@ export interface Product {
   isDrink?: boolean;
   types: ProductType[];
   availableIngridients?: AvailableIngridient[];
+  rating?: number;
 }
 export interface ProductType {
   size: PizzaSize;
@@ -21,8 +22,8 @@ export interface ProductType {
 export type Id = string;
 export type PizzaSize = number;
 
-
 export type CartProductKey = string;
+
 export interface CartProduct extends Product {
   currentSize?: PizzaSize;
   currentIngridients?: Ingridient[];
@@ -36,3 +37,11 @@ export type AvailableIngridient = {
   price: number;
   imgUrl: string;
 };
+
+export interface DropdownOption {
+  property: DropdownProperty;
+  name: string;
+}
+
+export type DropdownProperty = string;
+export type SortProperty = DropdownProperty;

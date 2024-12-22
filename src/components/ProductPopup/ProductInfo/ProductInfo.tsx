@@ -11,7 +11,7 @@ import {
 } from "./ProductInfo.styled";
 
 const ProductInfo = observer(() => {
-  const { currentProduct } = productStore;
+  const { currentProduct, currentSize } = productStore;
 
   return (
     <Wrapper>
@@ -19,7 +19,7 @@ const ProductInfo = observer(() => {
       <ProductTitle>{currentProduct?.name}</ProductTitle>
       <ProductText>
         <Description>{currentProduct?.description}</Description>
-        <Params>{getPizzaParams()}</Params>
+        <Params>{getPizzaParams(currentProduct!, currentSize)}</Params>
       </ProductText>
     </Wrapper>
   );

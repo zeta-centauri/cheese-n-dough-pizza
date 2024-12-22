@@ -7,6 +7,7 @@ import {
   Category,
 } from "./Categories.styled";
 import { categories } from "./utils";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function Categories() {
   const [currentCategory, setCurrentCategory] = useState(0);
@@ -22,6 +23,7 @@ export default function Categories() {
             </Category>
           ))}
         </CategoriesList>
+        <SearchBar isMobile={false} />
         <CartButton isCategoriesButton={true} />
       </CategoriesContainer>
     </CategoriesWrapper>

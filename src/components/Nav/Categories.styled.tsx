@@ -19,6 +19,8 @@ export const CategoriesList = styled.ul`
   display: flex;
   align-items: center;
   gap: 18px;
+
+  margin-right: 40px;
   @media (width < 880px) {
     overflow-y: hidden;
     overflow-x: scroll;
@@ -26,6 +28,7 @@ export const CategoriesList = styled.ul`
       display: none;
     }
     gap: 12px;
+    margin-right: 0;
   }
 `;
 export const Category = styled.li<{ $isActive?: boolean }>`

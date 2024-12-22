@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
+import { CloseButton } from "../Buttons/CloseButton/CloseButton";
 
 export const CartOveraly = styled.div`
   height: 100vh;
@@ -28,11 +29,15 @@ export const CartOveraly = styled.div`
 `;
 
 export const CartDialog = styled.aside`
-  height: 100%;
-  width: 40%;
-  background-color: ${colors.bgLight};
-  animation: open 0.6s ease;
+  height: 100vh;
+  width: 650px;
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: ${colors.bgGray};
+  animation: open 0.6s ease;
 
   @keyframes open {
     from {
@@ -42,17 +47,31 @@ export const CartDialog = styled.aside`
       transform: translateX(0px);
     }
   }
+  @media (width <= 800px) {
+    width: 100%;
+  }
 `;
 
-export const CartTitle = styled.h2``;
-
-export const CloseButton = styled.button`
-  position: absolute;
+export const CartCloseButton = styled(CloseButton)`
   top: 50%;
   bottom: 50%;
   transform: translateY(-50%);
   left: -70px;
-  background-image: url("assets/img/svg/close.svg");
-  width: 29px;
-  height: 29px;
+
+  @media (width <= 800px) {
+    display: none;
+  }
+
+  &:hover {
+    animation: spin 1s ease;
+
+    @keyframes spin {
+      0% {
+        transform: translateY(-50%) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+  }
 `;

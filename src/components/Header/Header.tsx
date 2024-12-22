@@ -8,8 +8,17 @@ import {
   Burger,
 } from "./Header.styled";
 import { navLinks } from "./utils";
+import sidebarStore from "../../stores/sidebar-store";
+import loginStore from "../../stores/login-store";
 
 export default function Header() {
+  const openSidebar = sidebarStore.open;
+  const openLogin = loginStore.open;
+
+  const handleLoginClick = () => {
+    openLogin();
+  };
+
   return (
     <header>
       <MainHeaderContainer>
@@ -26,8 +35,8 @@ export default function Header() {
             ))}
           </ul>
         </Nav>
-        <LoginButton>Войти</LoginButton>
-        <Burger>
+        <LoginButton onClick={handleLoginClick}>Войти</LoginButton>
+        <Burger onClick={openSidebar}>
           <img src={burgerImg} alt="" />
         </Burger>
       </MainHeaderContainer>
