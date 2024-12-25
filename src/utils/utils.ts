@@ -1,3 +1,5 @@
+const API_URL = "https://67028b4ebd7c8c1ccd3f2a78.mockapi.io/categories";
+
 export const normalizeScroll = (isOpen: boolean) => {
   const scrollBarWidth =
     window.innerWidth - document.documentElement.clientWidth;
@@ -15,8 +17,6 @@ export const normalizeScroll = (isOpen: boolean) => {
 };
 
 export const fetchData = async () => {
-  const response = await fetch(
-    "https://67028b4ebd7c8c1ccd3f2a78.mockapi.io/categories"
-  );
+  const response = await fetch(API_URL);
   return response.json();
 };
