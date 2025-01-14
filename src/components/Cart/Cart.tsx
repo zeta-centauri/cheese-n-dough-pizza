@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { normalizeScroll } from "../../utils/utils";
+import { useNormalizeScroll } from "../../utils/utils";
 import { observer } from "mobx-react-lite";
 
 import cartStore from "../../stores/cart-store";
@@ -8,27 +7,28 @@ import CartTitle from "./CartTitle/CartTitle";
 import BuyBlock from "./BuyBlock/BuyBlock";
 import ProductsList from "./ProductsList/ProductsList";
 import CartHeader from "./CartHeader/CartHeader";
+import { useNavigate } from "react-router";
 
-const CartAside = observer(() => {
-  const { isOpen, close } = cartStore;
+const Cart = observer(() => {
+  const navigate = useNavigate();
+  useNormalizeScroll();
 
-  useEffect(() => {
-    normalizeScroll(isOpen);
-  }, [isOpen]);
+  const handleOverlayClick = () => {
+    navigate("/");
+  };
 
-  if (!isOpen) return null;
   return (
-    <CartOveraly onClick={close}>
+    <CartOveraly onClick={handleOverlayClick}>
       <CartDialog onClick={(e) => e.stopPropagation()}>
         <CartHeader />
         <CartTitle />
         <ProductsList />
         <BuyBlock />
 
-        <CartCloseButton onClick={close} />
+        <CartCloseButton onClick={handleOverlayClick} />
       </CartDialog>
     </CartOveraly>
   );
 });
 
-export default CartAside;
+export default Cart;

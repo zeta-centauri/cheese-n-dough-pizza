@@ -5,19 +5,27 @@ import AddProductButton from "../../Buttons/AddProductButton/AddProductButton";
 import RadioButton from "../../Buttons/RadioButton/RadioButton";
 import { Wrapper } from "./ProductOptions.styled";
 import cartStore from "../../../stores/cart-store";
+import { Product } from "../../../types";
+import { useNavigate } from "react-router";
 
-const ProductOptions = observer(() => {
-  const { currentPrice, currentProduct, packProduct, close } = productStore;
+interface Props {
+  product: Product;
+}
+
+const ProductOptions = observer(({ product }: Props) => {
+  const { currentPrice, packProduct } = productStore;
   const { addProduct } = cartStore;
+
+  const navigate = useNavigate();
 
   const handleAddProduct = () => {
     addProduct(packProduct());
-    close();
+    navigate("/");
   };
 
   return (
     <Wrapper>
-      <RadioButton types={currentProduct?.types} />
+      <RadioButton types={product.types} />
       <IngridientsPanel />
       <AddProductButton onclick={handleAddProduct} price={currentPrice} />
     </Wrapper>

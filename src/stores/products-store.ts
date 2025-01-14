@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { Category, Product, SortProperty } from "../types";
+import { Category, Id, Product, SortProperty } from "../types";
 import { fetchData } from "../utils/utils";
 
 class ProductsStore {
@@ -26,6 +26,14 @@ class ProductsStore {
       runInAction(() => {
         this.isLoading = false;
       });
+    }
+  };
+
+  getProduct = (id: Id) => {
+    for (let category of this.products) {
+      for (let product of category.products) {
+        if (product.id == id) return product;
+      }
     }
   };
 

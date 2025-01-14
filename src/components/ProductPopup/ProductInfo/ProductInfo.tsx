@@ -9,17 +9,22 @@ import {
   Description,
   Params,
 } from "./ProductInfo.styled";
+import { Product } from "../../../types";
 
-const ProductInfo = observer(() => {
-  const { currentProduct, currentSize } = productStore;
+interface Props {
+  product: Product;
+}
+
+const ProductInfo = observer(({ product }: Props) => {
+  const { currentSize } = productStore;
 
   return (
     <Wrapper>
-      <ProductImage src={getProductImage()} />
-      <ProductTitle>{currentProduct?.name}</ProductTitle>
+      <ProductImage src={getProductImage(product)} />
+      <ProductTitle>{product.name}</ProductTitle>
       <ProductText>
-        <Description>{currentProduct?.description}</Description>
-        <Params>{getPizzaParams(currentProduct!, currentSize)}</Params>
+        <Description>{product.description}</Description>
+        <Params>{getPizzaParams(product, currentSize)}</Params>
       </ProductText>
     </Wrapper>
   );

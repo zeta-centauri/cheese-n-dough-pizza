@@ -1,32 +1,48 @@
-import CartButton from "./components/Buttons/CartButton/CartButton";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import ProductPopup from "./components/ProductPopup/ProductPopup";
-import Categories from "./components/Nav/Categories";
-import CartAside from "./components/Cart/Cart";
 import { GlobalStyle } from "./GlobalStyle";
-import SideBar from "./components/SideBar/SideBar";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./pages/Home";
+import ProductPopup from "./components/ProductPopup/ProductPopup";
+import Cart from "./components/Cart/Cart";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import SideBar from "./components/SideBar/SideBar";
 
-import "bootstrap";
-import SearchBar from "./components/SearchBar/SearchBar";
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <Categories />
-      <SearchBar isMobile={true} />
-      <Main />
-      <Footer />
-      <CartButton isCategoriesButton={false} />
-      <CartAside />
-      <ProductPopup />
-      <SideBar />
-      <LoginPopup />
+      <RouterProvider router={router} />
     </>
   );
 }
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
+        path: "product",
+        children: [
+          {
+            path: ":productId",
+            element: <ProductPopup />,
+          },
+        ],
+      },
+      {
+        path: "cart",
+        element: <Cart />,
+      },
+      {
+        path: "login",
+        element: <LoginPopup />,
+      },
+      {
+        path: "aside",
+        element: <SideBar />,
+      },
+    ],
+  },
+]);
 
 export default App;

@@ -1,22 +1,25 @@
 import { observer } from "mobx-react-lite";
-import { useEffect } from "react";
 import styled from "styled-components";
 import loginStore from "../../stores/login-store";
-import { normalizeScroll } from "../../utils/utils";
+import { useNormalizeScroll } from "../../utils/utils";
 import LoginForm from "./LoginForm/LoginForm";
 import RegisterForm from "./RegisterForm/RegisterForm";
 import { colors } from "../../styles/colors";
+import { useNavigate } from "react-router";
 
 const LoginPopup = observer(() => {
-  const { isOpen, close, currentMode, changeMode } = loginStore;
+  const { currentMode, changeMode } = loginStore;
 
-  useEffect(() => {
-    normalizeScroll(isOpen);
-  }, [isOpen]);
+  const navigate = useNavigate();
 
-  if (!isOpen) return null;
+  useNormalizeScroll();
+
+  const handleOverlayClick = () => {
+    navigate("/");
+  };
+
   return (
-    <LoginOverlay onClick={close}>
+    <LoginOverlay onClick={handleOverlayClick}>
       <LoginWrapper onClick={(e) => e.stopPropagation()}>
         {currentMode == "login" && <LoginForm />}
         {currentMode == "register" && <RegisterForm />}

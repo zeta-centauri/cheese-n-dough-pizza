@@ -1,11 +1,9 @@
 import productStore from "../../../stores/product-store";
 import { CartProduct, PizzaSize, Product } from "../../../types";
 
-export const getProductImage = (): string => {
-  const { currentSize, currentProduct } = productStore;
-  return (
-    currentProduct!.types[currentSize]?.image ?? currentProduct!.types[0].image
-  );
+export const getProductImage = (product: Product): string => {
+  const { currentSize } = productStore;
+  return product.types[currentSize]?.image ?? product.types[0].image;
 };
 
 export const getPizzaParams = (

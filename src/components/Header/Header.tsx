@@ -8,21 +8,23 @@ import {
   Burger,
 } from "./Header.styled";
 import { navLinks } from "./utils";
-import sidebarStore from "../../stores/sidebar-store";
-import loginStore from "../../stores/login-store";
+import { useNavigate } from "react-router";
 
 export default function Header() {
-  const openSidebar = sidebarStore.open;
-  const openLogin = loginStore.open;
+  const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    openLogin();
+    navigate("login");
+  };
+
+  const handleBurgerClick = () => {
+    navigate("aside");
   };
 
   return (
     <header>
       <MainHeaderContainer>
-        <Logo href="#">
+        <Logo to="/">
           <img src={logoImg} alt="" className="logo" />
         </Logo>
         <Nav>
@@ -36,7 +38,7 @@ export default function Header() {
           </ul>
         </Nav>
         <LoginButton onClick={handleLoginClick}>Войти</LoginButton>
-        <Burger onClick={openSidebar}>
+        <Burger onClick={handleBurgerClick}>
           <img src={burgerImg} alt="" />
         </Burger>
       </MainHeaderContainer>

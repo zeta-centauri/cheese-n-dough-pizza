@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import { Container } from "../../styles/Container";
+import { Link } from "react-router";
 
 export const MainHeaderContainer = styled(Container)`
   display: flex;
@@ -8,7 +9,7 @@ export const MainHeaderContainer = styled(Container)`
   padding-top: 30px;
   padding-bottom: 17px;
 `;
-export const Logo = styled.a`
+export const Logo = styled(Link)`
   margin-right: auto;
   img {
     width: 301px;

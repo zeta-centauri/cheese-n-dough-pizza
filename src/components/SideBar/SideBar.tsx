@@ -6,30 +6,31 @@ import Link from "./Link/Link";
 
 import { LinksData } from "./utils";
 import { Wrapper, Header, CloseButton, LinkList, Logo } from "./SideBar.styled";
-import { useEffect } from "react";
-import { normalizeScroll } from "../../utils/utils";
+import { useNormalizeScroll } from "../../utils/utils";
 
 import logoImage from "/assets/img/svg/logo-mini-light.svg";
 import doorIcon from "/assets/img/svg/door.svg";
-import loginStore from "../../stores/login-store";
+import { useNavigate } from "react-router";
+// import loginStore from "../../stores/login-store";
+
 const SideBar = observer(() => {
-  const { isOpen, close } = sidebarStore;
-  const { open } = loginStore;
+  // const { isOpen, close } = sidebarStore;
+  // const { open } = loginStore;
+  const navigate = useNavigate();
+  useNormalizeScroll();
 
-  useEffect(() => {
-    normalizeScroll(isOpen);
-    return () => {};
-  });
+  // if (!isOpen) return null;
 
-  if (!isOpen) return null;
-
+  const handleCloseButton = () => {
+    navigate("/");
+  };
   return (
     <Wrapper>
       <Header>
         <Logo>
           <img src={logoImage} alt="Logo" />
         </Logo>
-        <CloseButton onClick={close} />
+        <CloseButton onClick={handleCloseButton} />
       </Header>
       <LinkList>
         <Link imageUrl={doorIcon} title="Войти" onClick={open} />

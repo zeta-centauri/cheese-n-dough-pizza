@@ -1,5 +1,6 @@
 import { Product } from "../../../types";
 import productStore from "../../../stores/product-store";
+import { useNavigate } from "react-router";
 import {
   Wrapper,
   ProductInfo,
@@ -14,17 +15,18 @@ import { getButtonText } from "./utils";
 import Rating from "./Rating/Rating";
 
 export default function ProductBlock({ ...product }: Product) {
-  const { open, setProduct, packProduct } = productStore;
+  const { packProduct } = productStore;
   const { addProduct } = cartStore;
 
+  const navigate = useNavigate();
+
   const handleSelectButton = () => {
-    setProduct(product);
     if (product.types.length > 1) {
-      open();
+      navigate("product/" + product.id);
     } else {
       addProduct(packProduct());
     }
-  }; 
+  };
 
   return (
     <Wrapper>
@@ -43,8 +45,8 @@ export default function ProductBlock({ ...product }: Product) {
           </SelectButtonMobile>
         </ProductText>
       </ProductInfo>
-      <ProductFooter>
 
+      <ProductFooter>
         <p>от {product.types[0].price} ₽</p>
         <SelectButtonDesktop onClick={handleSelectButton}>
           {getButtonText(product.types)}

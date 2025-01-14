@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 
-import { normalizeScroll } from "../../utils/utils";
+import { useNormalizeScroll } from "../../utils/utils";
 
 import {
   ProductCloseButton,
@@ -9,23 +9,39 @@ import {
   ProductWrapper,
 } from "./ProductPopup.styled";
 import ProductOptions from "./ProductOptions/ProductOptions";
-import productStore from "../../stores/product-store";
 import ProductInfo from "./ProductInfo/ProductInfo";
+import { useNavigate, useParams } from "react-router";
+import productsStore from "../../stores/products-store";
+import { Id } from "../../types";
+import productStore from "../../stores/product-store";
 
 const ProductPopup = observer(() => {
-  const { isOpen, close } = productStore;
+  useNormalizeScroll();
+
+  const { getProduct } = productsStore;
+  const { setProduct, currentProduct } = productStore;
+  const navigate = useNavigate();
+
+  const { productId } = useParams<Id>();
 
   useEffect(() => {
-    normalizeScroll(isOpen);
-  }, [isOpen]);
+    setProduct(getProduct(productId as Id)!);
+  }, []);
 
-  if (!isOpen) return null;
+  const handleOverlayClick = () => {
+    navigate("/");
+  };
+
   return (
-    <ProductOverlay onClick={close}>
+    <ProductOverlay onClick={handleOverlayClick}>
       <ProductWrapper onClick={(e) => e.stopPropagation()}>
         <ProductCloseButton onClick={close} />
-        <ProductInfo />
-        <ProductOptions />
+        {currentProduct && (
+          <>
+            <ProductInfo product={currentProduct} />
+            <ProductOptions product={currentProduct} />
+          </>
+        )}
       </ProductWrapper>
     </ProductOverlay>
   );

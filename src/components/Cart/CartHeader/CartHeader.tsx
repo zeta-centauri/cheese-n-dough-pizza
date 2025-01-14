@@ -8,21 +8,26 @@ import logoImg from "/assets/img/svg/logo.svg";
 
 import { Logo } from "../../Header/Header.styled";
 import { colors } from "../../../styles/colors";
-import sidebarStore from "../../../stores/sidebar-store";
+import { useNavigate } from "react-router";
 
 const CartHeader = observer(() => {
-  const { close } = cartStore;
-  const { open } = sidebarStore;
+  const navigate = useNavigate();
 
+  const handleCloseButton = () => {
+    navigate("/");
+  };
+  const handleBurgerButton = () => {
+    navigate("aside");
+  };
   return (
     <Wrapper>
-      <CloseButton onClick={close}>
+      <CloseButton onClick={handleCloseButton}>
         <img src={backArrow} alt="Back arrow" />
       </CloseButton>
-      <Logo>
+      <Logo to="/">
         <img src={logoImg} />
       </Logo>
-      <BurgerButton onClick={open}>
+      <BurgerButton onClick={handleBurgerButton}>
         <img src={burger} alt="Burger" />
       </BurgerButton>
     </Wrapper>

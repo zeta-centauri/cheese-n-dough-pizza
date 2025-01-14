@@ -22,7 +22,7 @@ const Main = observer(() => {
   if (isLoading) return <LoadingMain />;
 
   return (
-    <main>
+    <MainWrapper>
       <MainContainer>
         {!currentSearchValue.trim() &&
           getProducts(currentSortValue).map((category: Category) => (
@@ -36,7 +36,7 @@ const Main = observer(() => {
           />
         )}
       </MainContainer>
-    </main>
+    </MainWrapper>
   );
 });
 
@@ -45,6 +45,10 @@ export const MainContainer = styled(Container)`
   flex-direction: column;
   gap: 36px;
   padding: 15px 0px 36px 0px;
+`;
+
+export const MainWrapper = styled.main`
+  flex: 1 0 auto;
 `;
 
 export default Main;

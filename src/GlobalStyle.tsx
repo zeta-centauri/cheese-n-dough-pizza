@@ -12,5 +12,13 @@ export const GlobalStyle = createGlobalStyle`
   }
   body{
     position: relative;
+    overflow: auto;
+    padding-right: 0px;
+  }
+  #root{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
   }
 `;
