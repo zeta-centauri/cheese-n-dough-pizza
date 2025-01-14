@@ -1,115 +1,47 @@
-import styled from "styled-components";
-import { Container } from "../Container";
-
-const MainHeader = styled.header``;
-const MainHeaderContianer = styled(Container)`
-  display: flex;
-  align-items: center;
-  padding: 45px 0px;
-`;
-const Logo = styled.a`
-  margin-right: auto;
-  img {
-    width: 301px;
-    height: auto;
-  }
-`;
-const Nav = styled.nav`
-  margin-right: 60px;
-  @media (width < 880px) {
-    display: none;
-  }
-  ul {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      img {
-        width: 14px;
-        height: 14px;
-      }
-      a {
-        position: relative;
-        text-decoration: none;
-        color: black;
-        &::after {
-          position: absolute;
-          content: "";
-          bottom: -5px;
-          right: 0;
-          width: 100%;
-          transform: scaleX(0);
-          height: 1px;
-          background-color: black;
-          transition: all 0.2s ease;
-        }
-        &:hover::after {
-          transform: scaleX(1);
-        }
-      }
-    }
-  }
-`;
-const LoginButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffe5d0;
-  border-radius: 9px;
-  padding: 16px 35px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #f77718;
-  transition: all 0.2s ease;
-  &:hover {
-    background-color: #f77718;
-    color: white;
-  }
-  @media (width < 880px) {
-    display: none;
-  }
-`;
-const Burger = styled.button`
-  display: none;
-  @media (width < 880px) {
-    display: block;
-  }
-`;
+import logoImg from "/assets/img/svg/logo.svg";
+import burgerImg from "/assets/img/svg/burger.svg";
+import {
+  MainHeaderContainer,
+  Logo,
+  Nav,
+  LoginButton,
+  Burger,
+} from "./Header.styled";
+import { navLinks } from "./utils";
+import { useNavigate } from "react-router";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate("login");
+  };
+
+  const handleBurgerClick = () => {
+    navigate("aside");
+  };
+
   return (
-    <>
-      <MainHeader>
-        <MainHeaderContianer>
-          <Logo href="#">
-            <img src="assets/img/svg/logo.svg" alt="" className="logo" />
-          </Logo>
-          <Nav>
-            <ul>
-              <li>
-                <img src="assets/img/svg/lightning-icon.svg" alt="" />
-                <a href="">Контакты</a>
+    <header>
+      <MainHeaderContainer>
+        <Logo to="/">
+          <img src={logoImg} alt="" className="logo" />
+        </Logo>
+        <Nav>
+          <ul>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <img src={link.iconSrc} alt={link.text} />
+                <a href={link.href}>{link.text}</a>
               </li>
-              <li>
-                <img src="assets/img/svg/gift-icon.svg" alt="" />
-                <a href="">Акции</a>
-              </li>
-              <li>
-                <img src="assets/img/svg/about-icon.svg" alt="" />
-                <a href="#">О нас</a>
-              </li>
-            </ul>
-          </Nav>
-          <LoginButton>Войти</LoginButton>
-          <Burger>
-            <img src="assets/img/svg/burger.svg" alt="" />
-          </Burger>
-        </MainHeaderContianer>
-      </MainHeader>
-    </>
+            ))}
+          </ul>
+        </Nav>
+        <LoginButton onClick={handleLoginClick}>Войти</LoginButton>
+        <Burger onClick={handleBurgerClick}>
+          <img src={burgerImg} alt="" />
+        </Burger>
+      </MainHeaderContainer>
+    </header>
   );
 }
