@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# Сервис доставки пиццы "Сыр и тесто"
+Этот репозиторий содержит клиентскую часть веб-приложения для сервиса доставки пиццы "Сыр и Тесто". Приложение позволяет пользователям просматривать меню пицц, добавлять их в корзину, изменять состав пиццы, а также оформлять заказ.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Технологии
 
-Currently, two official plugins are available:
+Приложение построено с использованием следующих технологий:
+- ⚛️ **React**
+- 🧠 **MobX**
+- 💅🏻 **Styled Components**
+- 📝 **React Hook Form**
+- 🛣️ **React Router Dom**
+- 🔵 **TypeScript**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Фичи
 
-## Expanding the ESLint configuration
+Приложение поддерживет следующий функционал:
+- ✅ **Меню с товарами**
+- ✅ **Корзина**
+- ✅ **Сортировка товаров**
+- ✅ **Поиск товаров (пока на клиенте)**
+- ⌛**Авторизация**
+- ⌛**Lazy Loading для товаров**
+- ⌛**Интерфейс оформления заказа**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Установка и запуск
+1. Клонируйте репозиторий:
+  ```bash
+  git clone https://github.com/zeta-centauri/cheese-n-dough-pizza.git
+  ```   
+2. Перейдите в директорию проекта:
+  ``` bash
+  cd cheese-n-dough-pizza
+  ```
+3. Установите зависимости
+  ``` bash
+  npm i
+  ```
+4. Запустите приложение в dev-режиме
+  ``` bash
+  npm run dev
+  ```
+   
