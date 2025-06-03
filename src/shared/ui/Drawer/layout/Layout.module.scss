@@ -1,0 +1,79 @@
+@import 'src/css/mixins';
+
+.container {
+    @include portalContentContainer;
+}
+
+.drawer {
+    &__enter {
+        .content {
+            transform: translateX(0);
+        }
+
+        .fallback {
+            opacity: 1;
+        }
+
+        &_done {
+            .content {
+                transform: translateX(0);
+            }
+
+            .fallback {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__exit {
+        .fallback {
+            opacity: 0;
+        }
+    }
+}
+
+.content {
+    background-color: var(--bg-table);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.left {
+    left: 0;
+    transform: translateX(-100%);
+
+    .closeButton {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px 15px 0 0;
+    }
+}
+
+.right {
+    right: 0;
+    transform: translateX(100%);
+
+    .closeButton {
+        padding: 15px 0 0 15px;
+    }
+}
+
+.fallback {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--modalFallback);
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+.main {
+    height: calc(100% - 29px);
+}

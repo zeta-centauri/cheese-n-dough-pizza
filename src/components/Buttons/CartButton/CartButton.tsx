@@ -1,29 +1,34 @@
-import { observer } from "mobx-react-lite";
-import cartStore from "../../../stores/cart-store";
-import { Button, ButtonCounter } from "./CartButton.styled";
-import { useNavigate } from "react-router";
+import { observer } from 'mobx-react-lite';
+import { Button } from './CartButton.styled';
+import { useNavigate } from 'react-router';
+import { useOpen } from 'shared/hooks/useOpen';
+import { CartPanel } from 'widgets/cartPanel';
 
 interface CartButtonProps {
-  isCategoriesButton: boolean;
+    isCategoriesButton: boolean;
 }
 
 const CartButton = observer(({ isCategoriesButton }: CartButtonProps) => {
-  const { totalPrice } = cartStore;
-  const navigate = useNavigate();
-  const handleCartButtonClick = () => {
-    navigate("cart");
-  };
+    const { isOpen, close, open } = useOpen();
 
-  return (
-    <Button
-      onClick={handleCartButtonClick}
-      $isCategoriesButton={isCategoriesButton}
-    >
-      <img src="assets/img/svg/cart.svg" alt="" />
-      <div className="divider"></div>
-      <ButtonCounter>{totalPrice} ₽</ButtonCounter>
-    </Button>
-  );
+    const handleCartButtonClick = () => {
+        open();
+    };
+
+    return (
+        <>
+            <Button
+                onClick={handleCartButtonClick}
+                $isCategoriesButton={isCategoriesButton}
+            >
+                <img src="assets/img/svg/cart.svg" alt="" />
+                <div className="divider"></div>
+                {/* <ButtonCounter>{totalPrice} ₽</ButtonCounter> */}
+            </Button>
+
+            <CartPanel isOpen={isOpen} onClose={close} />
+        </>
+    );
 });
 
 export default CartButton;
