@@ -1,48 +1,43 @@
-import { GlobalStyle } from "./GlobalStyle";
-import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "./pages/Home";
-import ProductPopup from "./components/ProductPopup/ProductPopup";
-import Cart from "./components/Cart/Cart";
-import LoginPopup from "./components/LoginPopup/LoginPopup";
-import SideBar from "./components/SideBar/SideBar";
+import { GlobalStyle } from './GlobalStyle';
+import { createBrowserRouter, RouterProvider } from 'react-router';
+import { Home } from './pages/Home/ui/Home';
+import SideBar from './components/SideBar/SideBar';
+import { Authorization } from './widgets/authorization/authorization/Authorization';
+import { CartPanel } from 'widgets/cartPanel';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
-  return (
-    <>
-      <GlobalStyle />
-      <RouterProvider router={router} />
-    </>
-  );
+    return (
+        <>
+            <GlobalStyle />
+            <RouterProvider router={router} />
+            <Toaster />
+        </>
+    );
 }
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    children: [
-      {
-        path: "product",
+    {
+        path: '/',
+        element: <Home />,
         children: [
-          {
-            path: ":productId",
-            element: <ProductPopup />,
-          },
+            {
+                path: 'cart',
+                element: <CartPanel isOpen={true} onClose={() => {}} />,
+            },
+            {
+                path: 'login',
+                element: <Authorization />,
+            },
+            {
+                path: 'aside',
+                element: <SideBar />,
+            },
+            {
+                path: 'product/:productId',
+            },
         ],
-      },
-      {
-        path: "cart",
-        element: <Cart />,
-      },
-      {
-        path: "login",
-        element: <LoginPopup />,
-      },
-      {
-        path: "aside",
-        element: <SideBar />,
-      },
-    ],
-  },
+    },
 ]);
 
 export default App;
