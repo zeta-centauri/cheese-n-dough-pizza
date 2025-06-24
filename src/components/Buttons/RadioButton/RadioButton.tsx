@@ -1,45 +1,52 @@
 /* eslint-disable react-refresh/only-export-components */
-import { observer } from "mobx-react-lite";
-import productStore from "../../../stores/product-store";
-import { ProductType, PizzaSize } from "../../../types";
-import { Wrapper, Inner, Slider, Option } from "./RadioButton.styled";
+import { observer } from 'mobx-react-lite';
+import { Wrapper, Inner, Slider, Option } from './RadioButton.styled';
+import { productsEndpoints } from 'shared/api';
+import { useProductStore } from 'widgets/productPopup/lib/ProductStoreContext';
+import { useState } from 'react';
+import { toJS } from 'mobx';
 
-interface RadioButtonProps {
-  types: ProductType[] | undefined;
-}
-
-export const pizzaSizes: Record<PizzaSize, string> = {
-  25: "Маленькая",
-  30: "Средняя",
-  35: "Большая",
+export const pizzaSizes: Record<number, string> = {
+    25: 'Маленькая',
+    30: 'Средняя',
+    35: 'Большая',
 };
 
-const RadioButton = observer(({ types }: RadioButtonProps) => {
-  const { currentSize, setSize } = productStore;
+type RadioButtonProps = {
+    sizes: productsEndpoints.Size[];
+};
 
-  const handleOptionClick = (size: PizzaSize) => {
-    setSize(size);
-  };
+const RadioButton = observer(({ sizes }: RadioButtonProps) => {
+    const [currentSizeIndex, setCurrentSizeIndex] = useState(0);
 
-  if (!types || types.length < 2) return null;
-  return (
-    <Wrapper>
-      <Inner>
-        {types.map((type, index) => (
-          <Option
-            key={index}
-            onClick={() => {
-              handleOptionClick(index);
-            }}
-          >
-            {pizzaSizes[type.size]}
-          </Option>
-        ))}
-        <Slider $typesCount={types.length} $currentSizeIndex={currentSize} />
-      </Inner>
-    </Wrapper>
-  );
+    const { currentSize, setSize } = useProductStore();
+
+    const handleOptionClick = (size: productsEndpoints.Size, index: number) => {
+        setCurrentSizeIndex(index);
+        setSize(size);
+    };
+
+    if (sizes.length < 2) return null;
+    return (
+        <Wrapper>
+            <Inner $typesCount={sizes.length}>
+                {sizes.map((size, index) => (
+                    <Option
+                        key={index}
+                        onClick={() => {
+                            handleOptionClick(size, index);
+                        }}
+                    >
+                        {pizzaSizes[size.size]}
+                    </Option>
+                ))}
+                <Slider
+                    $typesCount={sizes.length}
+                    $currentSizeIndex={currentSizeIndex}
+                />
+            </Inner>
+        </Wrapper>
+    );
 });
 
 export default RadioButton;
-
