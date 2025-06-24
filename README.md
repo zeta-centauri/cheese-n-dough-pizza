@@ -7,7 +7,7 @@
 - 🔵 **TypeScript**
 - ⚛️ **React**
 - 🧠 **MobX**
-- 💅🏻 **Styled Components**
+- 💅🏻 **Styled Components** (В данный момент происходит переход на SCSS Modules)
 - 📝 **react-hook-form**
 - 🛣️ **react-router-dom**
 
