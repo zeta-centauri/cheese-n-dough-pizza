@@ -8,6 +8,7 @@ export type LoginResponseType = {
     userId: number;
     username: string;
     email: string;
+    message?: string;
 };
 
 export const login = async ({

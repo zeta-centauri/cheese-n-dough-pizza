@@ -1,0 +1,41 @@
+.wrapper {
+    width: 100%;
+    max-width: 95px;
+    min-width: 95px;
+    height: 142px;
+    padding: 10px 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    background-color: var(--bgLight);
+    border-radius: 8px;
+    box-shadow: 0 0 15px 1px rgba(140, 140, 140, 0.25);
+    outline: none;
+    cursor: pointer;
+}
+
+.isPicked {
+    outline: var(--primary) 2px solid;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 110%;
+    text-align: center;
+}
+
+.price {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 121%;
+}
+
+.image {
+    width: 72px;
+    height: 72px;
+}

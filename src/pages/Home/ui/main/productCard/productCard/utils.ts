@@ -1,16 +1,16 @@
-type GetButtonTextPayload = {};
+type GetButtonTextPayload = {
+    availableIngredientsCount: number;
+    sizesCount: number;
+    isMobileButton: boolean;
+    price: number;
+};
 
 export const getButtonText = ({
     availableIngredientsCount,
     sizesCount,
     isMobileButton = false,
     price,
-}: {
-    availableIngredientsCount: number;
-    sizesCount: number;
-    isMobileButton: boolean;
-    price: string;
-}) => {
+}: GetButtonTextPayload) => {
     const isSimpleProduct = getIsSimpleProduct({
         availableIngredientsCount,
         sizesCount,

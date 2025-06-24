@@ -1,11 +1,12 @@
+import { cartStore } from 'entities/cart/model/cart';
 import { observer } from 'mobx-react-lite';
 import styled from 'styled-components';
 
 const Info = observer(() => {
-    // const { totalPrice } = cartStore;
+    const { totalPrice } = cartStore;
     return (
         <Wrapper>
-            {/* <p>{totalPrice} ₽</p> */}
+            <p>{totalPrice} ₽</p>
             <p>Сумма заказа</p>
         </Wrapper>
     );

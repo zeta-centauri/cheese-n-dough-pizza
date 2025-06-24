@@ -1,18 +1,20 @@
 import { observer } from 'mobx-react-lite';
 import styled from 'styled-components';
-import { ListItem } from './ListItem/ListItem';
 import { FC } from 'react';
 import { cartEndpoints } from '../../../../shared/api';
+import { ListItem } from './ListItem/listItem/ListItem';
 
 type ProductsListProps = {
     products: cartEndpoints.CartItem[];
 };
 
 const ProductsList: FC<ProductsListProps> = observer(({ products }) => {
+    console.log({ products });
+
     return (
         <List>
             {products.map((product) => (
-                <ListItem key={product.cartItemId} product={product} />
+                <ListItem key={product.cartItemId} {...product} />
             ))}
         </List>
     );

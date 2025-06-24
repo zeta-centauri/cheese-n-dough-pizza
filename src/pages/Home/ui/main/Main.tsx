@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import { Container } from '../../../../styles/Container';
 import { observer } from 'mobx-react-lite';
-import productsStore from '../../../../stores/products-store';
+import productsStore from '../../../../entities/products-store';
 import { CategoryBlock } from './сategoryBlock/categoryBlock/CategoryBlock';
 
 const Main = observer(() => {

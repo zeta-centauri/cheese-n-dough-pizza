@@ -6,14 +6,14 @@ import {
     Products,
 } from './CategoryBlock.styled';
 import { observer } from 'mobx-react-lite';
-import productsStore from '../../../../../../stores/products-store';
+import productsStore from 'entities/products-store';
 import { ProductCard } from '../../productCard/productCard/ProductCard';
-import { LoadingCategory } from '../LoadingCategory';
+import { CategoryLoader } from '../LoadingCategory';
 
 type CategoryBlockProps = Category;
 
 export const CategoryBlock = observer(
-    ({ name, categoryId }: CategoryBlockProps) => {
+    ({ name, categoryId, itemsCount }: CategoryBlockProps) => {
         const observerRef = useRef<HTMLDivElement>(null);
 
         const productsByCategoryId = productsStore.productsByCategoryId;
@@ -44,7 +44,7 @@ export const CategoryBlock = observer(
                 <StyledCategoryBlock id={name}>
                     <CategoryTitle>{name}</CategoryTitle>
                     {isShowLoader ? (
-                        <LoadingCategory />
+                        <CategoryLoader itemsCount={itemsCount} />
                     ) : (
                         <Products>
                             {products.map((product) => (

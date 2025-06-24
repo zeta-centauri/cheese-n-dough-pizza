@@ -1,8 +1,18 @@
-export type AddProductPayload = {
+export type AddProductBody = {
     productId: number;
+    sizeId?: number;
+    customIngredients?: number[];
 };
 
-export const addProduct = async ({ productId }: AddProductPayload) => {
+type AddProductResponse = {
+    success: boolean;
+    totalPrice: string;
+    message: string;
+};
+
+export const addProduct = async (
+    body: AddProductBody
+): Promise<AddProductResponse> => {
     const response = await fetch(
         `http://localhost/pizza_shop/api.php?action=add_to_cart`,
         {
@@ -10,7 +20,7 @@ export const addProduct = async ({ productId }: AddProductPayload) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ productId }),
+            body: JSON.stringify(body),
             credentials: 'include', // важно для сессионных куки
         }
     );

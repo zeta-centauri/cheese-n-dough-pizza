@@ -1,8 +1,8 @@
 import {
+    ItemDescription,
     ItemImg,
     ItemText,
     ItemTitle,
-    ItemDescription,
     Wrapper,
 } from './ItemInfo.styled';
 

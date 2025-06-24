@@ -4,12 +4,14 @@ import { Home } from './pages/Home/ui/Home';
 import SideBar from './components/SideBar/SideBar';
 import { Authorization } from './widgets/authorization/authorization/Authorization';
 import { CartPanel } from 'widgets/cartPanel';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
     return (
         <>
             <GlobalStyle />
             <RouterProvider router={router} />
+            <Toaster />
         </>
     );
 }
@@ -30,6 +32,9 @@ const router = createBrowserRouter([
             {
                 path: 'aside',
                 element: <SideBar />,
+            },
+            {
+                path: 'product/:productId',
             },
         ],
     },

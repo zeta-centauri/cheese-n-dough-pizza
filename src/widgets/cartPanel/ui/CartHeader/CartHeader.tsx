@@ -8,11 +8,17 @@ import logoImg from '/assets/img/svg/logo.svg';
 import { Logo } from '../../../../components/Header/Header.styled';
 import { colors } from '../../../../styles/colors';
 import { useNavigate } from 'react-router';
+import { FC } from 'react';
 
-const CartHeader = observer(() => {
+type CartHeaderProps = {
+    onClose: () => void;
+};
+
+export const CartHeader: FC<CartHeaderProps> = observer(({ onClose }) => {
     const navigate = useNavigate();
 
     const handleCloseButton = () => {
+        onClose();
         navigate('/');
     };
     const handleBurgerButton = () => {
@@ -32,8 +38,6 @@ const CartHeader = observer(() => {
         </Wrapper>
     );
 });
-
-export default CartHeader;
 
 const Wrapper = styled.header`
     display: none;

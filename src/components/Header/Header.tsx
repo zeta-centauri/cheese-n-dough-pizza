@@ -10,7 +10,7 @@ import {
 } from './Header.styled';
 import { navLinks } from './utils';
 import { useNavigate } from 'react-router';
-import loginStore from '../../stores/login-store';
+import loginStore from '../../entities/login-store';
 import { observer } from 'mobx-react-lite';
 import { LogoutButton } from './LogoutButton';
 
@@ -18,6 +18,8 @@ export const Header = observer(() => {
     const navigate = useNavigate();
 
     const userData = loginStore.user;
+
+    console.log({ userData });
 
     const handleLoginClick = () => {
         navigate('login');

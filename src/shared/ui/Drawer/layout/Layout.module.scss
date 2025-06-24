@@ -33,7 +33,7 @@
 }
 
 .content {
-    background-color: var(--bg-table);
+    background-color: var(--bgGray);
     height: 100vh;
     position: fixed;
     top: 0;
@@ -75,5 +75,5 @@
 }
 
 .main {
-    height: calc(100% - 29px);
+    height: 100%;
 }

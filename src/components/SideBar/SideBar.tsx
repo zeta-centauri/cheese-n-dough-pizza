@@ -12,7 +12,6 @@ import { useNormalizeScroll } from '../../shared/hooks';
 
 const SideBar = observer(() => {
     const navigate = useNavigate();
-    // useNormalizeScroll();
 
     const handleCloseButton = () => {
         navigate('/');

@@ -1,16 +1,10 @@
 import { observer } from 'mobx-react-lite';
 
-import CartTitle from '../CartTitle/CartTitle';
-import BuyBlock from '../BuyBlock/BuyBlock';
-import ProductsList from '../ProductsList/ProductsList';
-import CartHeader from '../CartHeader/CartHeader';
-import { useNavigate } from 'react-router';
-import { useNormalizeScroll } from '../../../../shared/hooks';
-
-import styles from './Cart.module.scss';
-import { FC, useEffect } from 'react';
-import { cartStore } from '../../../../entities/cart/model/cart';
+import styles from './CartPanel.module.scss';
+import { FC } from 'react';
 import { Drawer } from 'shared/ui';
+import { PanelContent } from '../panelContent/PanelContent';
+import { useViewPortWidth } from '../../../../shared/hooks/useViewportWidth';
 
 type CartPanelProps = {
     isOpen: boolean;
@@ -18,21 +12,16 @@ type CartPanelProps = {
 };
 
 export const CartPanel: FC<CartPanelProps> = observer(({ isOpen, onClose }) => {
-    const fetchProducts = cartStore.fetchProducts;
-    const products = cartStore.products;
-
-    useEffect(() => {
-        fetchProducts();
-    }, [fetchProducts]);
+    const viewPortWidth = useViewPortWidth();
 
     return (
-        <>
-            <Drawer isOpen={isOpen} onClose={onClose}>
-                <CartHeader />
-                <CartTitle />
-                <ProductsList products={products} />
-                <BuyBlock />
-            </Drawer>
-        </>
+        <Drawer
+            isOpen={isOpen}
+            onClose={onClose}
+            width={viewPortWidth < 800 ? '100%' : 650}
+            className={styles.cartDialog}
+        >
+            <PanelContent onClose={onClose} />
+        </Drawer>
     );
 });

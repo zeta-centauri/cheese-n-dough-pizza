@@ -2,9 +2,10 @@ import { PropsWithChildren } from 'react';
 import { useOpen } from 'shared/hooks/useOpen';
 import { SelectButtonDesktop } from '../ProductCard.styled';
 import { useNavigate } from 'react-router';
-import ProductPopup from 'widgets/productPopup/ProductPopup';
-import { addProduct } from 'shared/api/endpoints/cart/endpoints/addProduct';
 import { Modal } from 'shared/ui';
+import { cartStore } from 'entities/cart/model/cart';
+import toast from 'react-hot-toast';
+import { ProductPopup } from 'widgets/productPopup/ui/productPopup/ProductPopup';
 
 type SelectButtonProps = PropsWithChildren<{
     productId: number;
@@ -20,11 +21,34 @@ export const SelectButton = ({
     const navigate = useNavigate();
     const { isOpen, open, close } = useOpen();
 
-    const onSelectHandler = () => {
-        addProduct({ productId });
+    const { addProduct } = cartStore;
+
+    const onSelectHandler = async () => {
+        if (isSimpleAddButton) {
+            const { success, message } = await addProduct({ productId });
+            if (success) {
+                const notify = () =>
+                    toast(message, {
+                        position: 'bottom-left',
+                        style: {
+                            backgroundColor: 'var(--primary)',
+                            color: 'var(--fontWhite)',
+                        },
+                    });
+                notify();
+            } else {
+                const notify = () =>
+                    toast('Что-то пошло не так...', {
+                        position: 'bottom-left',
+                    });
+                notify();
+            }
+        } else {
+        }
     };
 
     const onClickHandler = () => {
+        navigate(`product/${productId}`);
         open();
     };
 
@@ -42,9 +66,7 @@ export const SelectButton = ({
             <SelectButtonDesktop onClick={onClickHandler}>
                 {children}
             </SelectButtonDesktop>
-            <Modal isOpen={isOpen} onClose={onCloseHandler}>
-                <ProductPopup />
-            </Modal>
+            <ProductPopup isOpen={isOpen} onClose={onCloseHandler} />
         </>
     );
 };

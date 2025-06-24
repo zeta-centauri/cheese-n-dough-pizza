@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-Form';
 import { colors } from '../../../styles/colors';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router';
-import loginStore from '../../../stores/login-store';
+import loginStore from '../../../entities/login-store';
+import { useEffect, useState } from 'react';
 
 interface ILoginFormData {
     email: string;
@@ -18,19 +19,29 @@ const LoginForm = observer(() => {
     } = useForm<ILoginFormData>({
         mode: 'onChange', // Проверка валидности формы в режиме onChange
     });
-
+    const [error, setError] = useState<string | undefined>(undefined);
     const login = loginStore.login;
 
     const navigate = useNavigate();
 
     const onSubmit = async ({ email, password }: ILoginFormData) => {
         try {
-            await login({ email, password });
-            navigate('/');
+            await login({ email, password }).then(({ success, message }) => {
+                if (success) {
+                    navigate('/');
+                } else {
+                    setError(message);
+                }
+            });
         } catch (error) {
             console.log('error');
         }
     };
+
+    useEffect(() => {
+        console.log(error);
+    }, [error]);
+
     return (
         <Wrapper>
             <FormTitle>Вход на сайт</FormTitle>
@@ -68,6 +79,7 @@ const LoginForm = observer(() => {
                     Войти
                 </SubmitButton>
             </Form>
+            {error && <ErrorSpan>{error}</ErrorSpan>}
         </Wrapper>
     );
 });
@@ -77,6 +89,12 @@ export default LoginForm;
 const ErrorMessage = styled.span`
     color: red;
     font-size: 12px;
+`;
+
+const ErrorSpan = styled.span`
+    width: 100%;
+    text-align: center;
+    color: red;
 `;
 
 const Wrapper = styled.div`

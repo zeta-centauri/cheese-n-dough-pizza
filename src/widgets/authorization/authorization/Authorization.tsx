@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import styled from 'styled-components';
-import loginStore from '../../../stores/login-store';
+import loginStore from '../../../entities/login-store';
 import LoginForm from '../loginForm/LoginForm';
 import RegisterForm from '../registerForm/RegisterForm';
 import { colors } from '../../../styles/colors';

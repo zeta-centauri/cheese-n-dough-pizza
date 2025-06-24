@@ -10,6 +10,7 @@ export const logout = async (): Promise<LogoutResponseType> => {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: 'include', // важно для сессионных куки
         }
     );
     return await response.json();

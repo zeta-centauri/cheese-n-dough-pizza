@@ -1,8 +1,12 @@
 import { observer } from 'mobx-react-lite';
-import { Button } from './CartButton.styled';
+import { Button, ButtonCounter } from './CartButton.styled';
 import { useNavigate } from 'react-router';
 import { useOpen } from 'shared/hooks/useOpen';
 import { CartPanel } from 'widgets/cartPanel';
+import { cartStore } from 'entities/cart/model/cart';
+import { useEffect } from 'react';
+import loginStore from 'entities/login-store';
+import cartIcon from 'assets/img/svg/cart.svg';
 
 interface CartButtonProps {
     isCategoriesButton: boolean;
@@ -11,9 +15,23 @@ interface CartButtonProps {
 const CartButton = observer(({ isCategoriesButton }: CartButtonProps) => {
     const { isOpen, close, open } = useOpen();
 
+    const navigate = useNavigate();
+
+    const userData = loginStore.user;
+
+    const { totalPrice, fetchTotalPrice } = cartStore;
+
     const handleCartButtonClick = () => {
-        open();
+        if (!userData) {
+            navigate('/login');
+        } else {
+            open();
+        }
     };
+
+    useEffect(() => {
+        fetchTotalPrice();
+    }, []);
 
     return (
         <>
@@ -21,9 +39,9 @@ const CartButton = observer(({ isCategoriesButton }: CartButtonProps) => {
                 onClick={handleCartButtonClick}
                 $isCategoriesButton={isCategoriesButton}
             >
-                <img src="assets/img/svg/cart.svg" alt="" />
+                <img src={cartIcon} alt="" />
                 <div className="divider"></div>
-                {/* <ButtonCounter>{totalPrice} ₽</ButtonCounter> */}
+                <ButtonCounter>{totalPrice ?? 0} ₽</ButtonCounter>
             </Button>
 
             <CartPanel isOpen={isOpen} onClose={close} />

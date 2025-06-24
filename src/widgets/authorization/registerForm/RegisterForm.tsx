@@ -3,7 +3,9 @@ import { useForm } from 'react-hook-Form';
 import { colors } from '../../../styles/colors';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router';
-import loginStore from '../../../stores/login-store';
+import loginStore from '../../../entities/login-store';
+import Notification from 'rc-notification';
+import toast from 'react-hot-toast';
 
 interface IRegisterFormData {
     username: string;
@@ -24,10 +26,25 @@ const RegisterForm = observer(() => {
 
     const registration = loginStore.register;
 
-    const onSubmit = ({ username, email, password }: IRegisterFormData) => {
+    const onSubmit = async ({
+        username,
+        email,
+        password,
+    }: IRegisterFormData) => {
         try {
-            registration({ email, username, password });
+            const { message } = await registration({
+                email,
+                username,
+                password,
+            });
             navigate('/');
+
+            const notify = () =>
+                toast(message, {
+                    duration: 6000,
+                    position: 'bottom-left',
+                });
+            notify();
         } catch (error) {
             console.log('error');
         }

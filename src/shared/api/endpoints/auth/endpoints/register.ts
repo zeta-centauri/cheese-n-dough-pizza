@@ -9,6 +9,7 @@ export type RegisterResponseType = {
     userId: number;
     username: string;
     email: string;
+    message: string;
 };
 
 export const register = async ({
@@ -24,6 +25,7 @@ export const register = async ({
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ email, username, password }),
+            credentials: 'include', // важно для сессионных куки
         }
     );
     return await response.json();

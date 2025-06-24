@@ -1,4 +1,8 @@
-export type FetchCartItemsResponseType = CartItem[];
+export type FetchCartItemsResponseType = {
+    cartItems: CartItem[];
+    totalPrice: string;
+    totalQuantity: number;
+};
 
 export type CartItem = {
     cartItemId: number;
@@ -10,7 +14,8 @@ export type CartItem = {
     productName: string;
     imageUrl: string;
     productSize: string | null;
-    sizePrice: string | null;
+    currentPrice: string;
+    totalPrice: string;
     customIngredients: [];
 };
 

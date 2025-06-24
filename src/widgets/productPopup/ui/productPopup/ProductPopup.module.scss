@@ -1,0 +1,39 @@
+.wrapper {
+    height: 605px;
+    padding: 27px 0;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #fdfdfd;
+    border-radius: 14px;
+
+    @media (width <= 1000px) {
+        height: 90%;
+        max-height: 90%;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+
+.modal {
+    @media (width <= 1000px) {
+        // height: 90%;
+        max-height: 90%;
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: -40px;
+
+    display: flex;
+}
